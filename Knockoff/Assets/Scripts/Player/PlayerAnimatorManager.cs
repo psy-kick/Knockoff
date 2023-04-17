@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace KnockOff.Player
 {
-    public class PlayerAnimatorManager : MonoBehaviour
+    public class PlayerAnimatorManager : MonoBehaviourPunCallbacks
     {
         #region Private Fields 
 
@@ -32,6 +33,9 @@ namespace KnockOff.Player
 
         private void Update()
         {
+            if (!photonView.IsMine && PhotonNetwork.IsConnected == true)
+                return;
+
             if (!anim)
                 return;
 
