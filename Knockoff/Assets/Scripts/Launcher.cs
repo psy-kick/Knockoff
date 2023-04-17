@@ -13,6 +13,12 @@ namespace KnockOff.Launcher
         [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
         [SerializeField] private byte maxPlayersPerRoom = 4;
 
+        [Header("UI Fields")]
+        [Tooltip("The UI Panel to let the user enter name, connect and play")]
+        [SerializeField] private GameObject controlPanel;
+        [Tooltip("The UI Label to inform the user that the connection is in progress")]
+        [SerializeField] private GameObject progressLabel;
+
         #endregion
 
         #region Private Fields
@@ -36,12 +42,10 @@ namespace KnockOff.Launcher
             PhotonNetwork.AutomaticallySyncScene = true;
         }
 
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity during initialization phase.
-        /// </summary>
-        void Start()
+        private void Start()
         {
-            Connect();
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(true);
         }
 
         #endregion
@@ -51,13 +55,16 @@ namespace KnockOff.Launcher
         public override void OnConnectedToMaster()
         {
             Debug.Log("PUN Basics Tutorial/Launcher: OnConnectedToMaster() was called by PUN");
+
             // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
             PhotonNetwork.JoinRandomRoom();
-
         }
 
         public override void OnDisconnected(DisconnectCause cause)
         {
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(true);
+
             Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 
@@ -65,7 +72,6 @@ namespace KnockOff.Launcher
         {
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         }
-
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
@@ -88,6 +94,9 @@ namespace KnockOff.Launcher
         /// </summary>
         public void Connect()
         {
+            progressLabel.SetActive(true);
+            controlPanel.SetActive(false);
+
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
             if (PhotonNetwork.IsConnected)
             {
