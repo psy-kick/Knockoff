@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System.Linq;
 
 namespace KnockOff.Player
 {
@@ -21,7 +22,7 @@ namespace KnockOff.Player
         public float SpeedChangeRate = 10.0f;
 
         [Tooltip("Character Rotation Speed")]
-        public float RotationSpeed = 50f;
+        public float RotationSpeed = 5f;
 
         [Tooltip("Specify ground layer mask for detection of IsGrounded")]
         public LayerMask groundLayer;
@@ -48,7 +49,7 @@ namespace KnockOff.Player
 
         private Rigidbody rb;
         private float mouseSensitivity = 100f;
-        private float xRot = 0f;
+        private Vector2 _rotation = Vector2.zero;
 
         private bool isSprinting;       //will be handled through stamina
 
@@ -74,11 +75,15 @@ namespace KnockOff.Player
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-            xRot -= mouseY;
-            xRot = Mathf.Clamp(xRot, BottomClamp, TopClamp);
+            _rotation.y -= mouseY;
+            _rotation.x += mouseX;
+            _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
 
-            //camTarget.localRotation = Quaternion.Euler(xRot, 0f, 0f);
-            //transform.Rotate(Vector3.up * mouseX);
+            Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
+            Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
+
+            transform.rotation = rot;
+            camTarget.rotation = camRot;
         }
 
         public void Move()
@@ -95,9 +100,10 @@ namespace KnockOff.Player
 
             Vector3 movement = new Vector3(horizontal, 0.0f, vertical).normalized;
 
-            // Apply the movement vector to the Rigidbody's velocity
-            rb.velocity = movement * MoveSpeed + new Vector3(0f, rb.velocity.y, 0f);
+            Vector3 moveDirection = transform.rotation * (Vector3.right * movement.x + Vector3.forward * movement.z);
 
+            // Apply the movement vector to the Rigidbody's velocity
+            rb.velocity = moveDirection * MoveSpeed + new Vector3(0f, rb.velocity.y, 0f);
         }
 
 
@@ -105,7 +111,7 @@ namespace KnockOff.Player
         {
             if (photonView.IsMine)
             {
-                //Look();
+                Look();
                 Move();
                 Jump();
             }

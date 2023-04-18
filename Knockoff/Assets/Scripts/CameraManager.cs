@@ -1,18 +1,33 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+namespace KnockOff.Camera
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CameraManager : MonoBehaviourPunCallbacks
     {
-        
-    }
+        private Cinemachine.CinemachineVirtualCamera vcam;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField] private Transform camTarget;
+
+        private void Awake()
+        {
+            if (!photonView.IsMine)
+                return;
+
+            vcam = FindObjectOfType<Cinemachine.CinemachineVirtualCamera>();
+            Debug.LogError(vcam);
+        }
+
+        private void Update()
+        {
+            if (photonView.IsMine)
+            {
+                vcam.m_Follow = camTarget;
+                vcam.m_LookAt = camTarget;
+            }
+        }
+
     }
 }

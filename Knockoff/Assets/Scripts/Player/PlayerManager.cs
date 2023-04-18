@@ -48,7 +48,7 @@ namespace KnockOff.Player
             if (!TryGetComponent(out playerAnimatorManager))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Animation Manager Component on playerPrefab.", this);*/
         }
-
+        /*
         private void Start()
         {
             CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
@@ -64,7 +64,7 @@ namespace KnockOff.Player
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             }
-        }
+        }*/
 
         private void Update()
         {
