@@ -53,10 +53,13 @@ namespace KnockOff.Player
             if (!TryGetComponent(out playerAnimatorManager))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Animation Manager Component on playerPrefab.", this);*/
         }
+
+ 
         private void Start()
         {
             EquipItem(0);
         }
+
         private void Update()
         {
             //GameManager.Instance.LeaveRoom() -> losing condition
@@ -68,6 +71,7 @@ namespace KnockOff.Player
             }
 
         }
+
         private void WeaponSwitchInputs()
         {
             for (int i = 0; i < items.Length; i++)
