@@ -29,8 +29,8 @@ namespace KnockOff.Camera
             // Set the virtual camera to follow the local player
             if (playerPhotonView != null)
             {
-                virtualCamera.Follow = playerPhotonView.transform;
-                virtualCamera.LookAt = playerPhotonView.transform;
+                virtualCamera.Follow = playerPhotonView.transform.GetChild(0);       //camTarget, less expensive than findbytag
+                virtualCamera.LookAt = playerPhotonView.transform.GetChild(0);      //camTarget, less expensive than findbytag
             }
         }
     }
