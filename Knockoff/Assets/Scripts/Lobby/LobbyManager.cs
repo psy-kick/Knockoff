@@ -12,11 +12,17 @@ using System;
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public TMP_InputField roomInputfield;
+    
     public GameObject LobbyPanel;
+    public GameObject ErrorPanel;
     public RoomItem roomItemPrefab;
 
     List<RoomItem> roomItemsList = new List<RoomItem>();
     public Transform contentObject;
+
+    public float timeBetweenUpdates = 1.5f;
+    float nextUpdateTime;
+    private string existingName;
 
     private void Start()
     {
@@ -44,7 +50,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        UpdateRoomList(roomList);
+        if(Time.time >= nextUpdateTime)
+        {
+            UpdateRoomList(roomList);
+            nextUpdateTime = Time.time + timeBetweenUpdates;
+        }
     }
 
     private void UpdateRoomList(List<RoomInfo> roomList)
@@ -65,5 +75,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public void joinRoom(string _roomname)
     {
         PhotonNetwork.JoinRoom(_roomname);
+    }
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
     }
 }
