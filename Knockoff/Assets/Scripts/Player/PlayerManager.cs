@@ -26,7 +26,6 @@ namespace KnockOff.Player
 
         int itemIndex;
         int previousItem = -1;
-        //this is where health would be if we had health
 
         #endregion
 
@@ -165,6 +164,7 @@ namespace KnockOff.Player
                 return;
             }
             itemIndex= index;
+
             items[itemIndex].itemPrefab.SetActive(true);
 
             if (previousItem != -1)

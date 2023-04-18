@@ -105,8 +105,8 @@ namespace KnockOff.Game
             }
 
             Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-            PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);   // we don't use Unity directly, because we want to rely on Photon to load this level on all connected clients in the room,
-                                                                                            // since we've enabled PhotonNetwork.AutomaticallySyncScene for this Game.
+            PhotonNetwork.LoadLevel("Room for " + 4);   // we don't use Unity directly, because we want to rely on Photon to load this level on all connected clients in the room,
+                                                                                            // since we've enabled PhotonNetwork.AutomaticallySyncScene for this Game. (PhotonNetwork.CurrentRoom.PlayerCount)
         }
 
         #endregion

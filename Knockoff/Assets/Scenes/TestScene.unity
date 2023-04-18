@@ -407,6 +407,16 @@ PrefabInstance:
       propertyPath: m_SynchronizeVelocity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1785828006510410405, guid: cd9e78314cd7f4b43a9ceb316f30e260,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370484106533772001, guid: cd9e78314cd7f4b43a9ceb316f30e260,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2808734218877236344, guid: cd9e78314cd7f4b43a9ceb316f30e260,
         type: 3}
       propertyPath: m_Name

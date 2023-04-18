@@ -17,7 +17,6 @@ namespace KnockOff.Camera
                 return;
 
             vcam = FindObjectOfType<Cinemachine.CinemachineVirtualCamera>();
-            Debug.LogError(vcam);
         }
 
         private void Update()
