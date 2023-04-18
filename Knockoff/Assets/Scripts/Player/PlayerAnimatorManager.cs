@@ -14,6 +14,13 @@ namespace KnockOff.Player
 
         [SerializeField] private float directionDampTime = 0.25f;
 
+        // animation IDs
+        private int _animIDSpeed;
+        private int _animIDGrounded;
+        private int _animIDJump;
+        private int _animIDFreeFall;
+        private int _animIDMotionSpeed;
+
         #endregion
 
 
@@ -32,7 +39,7 @@ namespace KnockOff.Player
 
 
         private void Update()
-        {
+        {/*
             if (!photonView.IsMine && PhotonNetwork.IsConnected == true)
                 return;
 
@@ -54,10 +61,19 @@ namespace KnockOff.Player
 
             anim.SetFloat("Speed", h * h + v * v);
             anim.SetFloat("Direction", h, directionDampTime, Time.deltaTime);
-
+            */
         }
 
         #endregion
+
+        private void AssignAnimationIDs()
+        {
+            _animIDSpeed = Animator.StringToHash("Speed");
+            _animIDGrounded = Animator.StringToHash("Grounded");
+            _animIDJump = Animator.StringToHash("Jump");
+            _animIDFreeFall = Animator.StringToHash("FreeFall");
+            _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+        }
     }
 
 }
