@@ -19,6 +19,11 @@ namespace KnockOff.Player
 
         bool IsFiring;
 
+        [SerializeField]
+        Item[] items;
+
+        int itemIndex;
+        int previousItem = -1;
         //this is where health would be if we had health
 
         #endregion
@@ -42,7 +47,7 @@ namespace KnockOff.Player
         private void Start()
         {
             CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
-
+            EquipItem(0);
             if (_cameraWork != null)
             {
                 if (photonView.IsMine)
@@ -64,8 +69,42 @@ namespace KnockOff.Player
             if (photonView.IsMine)
             {
                 ProcessInputs();
+                WeaponSwitchInputs();
             }
-
+            
+        }
+        private void WeaponSwitchInputs()
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (Input.GetKeyDown((i + 1).ToString()))
+                {
+                    photonView.RPC("EquipItem",RpcTarget.All,i);
+                    break;
+                }
+            }
+            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+            {
+                if (itemIndex >= items.Length - 1)
+                {
+                    photonView.RPC("EquipItem", RpcTarget.All, 0);
+                }
+                else
+                {
+                    photonView.RPC("EquipItem", RpcTarget.All, itemIndex + 1);
+                }
+            }
+            else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+            {
+                if (itemIndex <= 0)
+                {
+                    photonView.RPC("EquipItem", RpcTarget.All, items.Length - 1);
+                }
+                else
+                {
+                    photonView.RPC("EquipItem", RpcTarget.All, itemIndex - 1);
+                }
+            }
         }
 
         /// <summary>
@@ -123,6 +162,22 @@ namespace KnockOff.Player
                     IsFiring = false;
                 }
             }
+        }
+        [PunRPC]
+        void EquipItem(int  index)
+        {
+            if(index == previousItem)
+            {
+                return;
+            }
+            itemIndex= index;
+            items[itemIndex].itemPrefab.SetActive(true);
+
+            if (previousItem != -1)
+            {
+                items[previousItem].itemPrefab.SetActive(false);
+            }
+            previousItem = itemIndex;
         }
     }
 }
