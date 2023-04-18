@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 namespace KnockOff.Launcher
 {
@@ -67,12 +68,14 @@ namespace KnockOff.Launcher
             // we don't want to do anything if we are not attempting to join a room.
             // this case where isConnecting is false is typically when you lost or quit the game, when this level is loaded, OnConnectedToMaster will be called, in that case
             // we don't want to do anything.
-            if (isConnecting)
-            {
-                // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
-                PhotonNetwork.JoinRandomRoom();
-                isConnecting = false;
-            }
+            SceneManager.LoadScene("Lobby");
+            //uncomment this later if needed
+            //if (isConnecting)
+            //{
+            //    // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
+            //    PhotonNetwork.JoinRandomRoom();
+            //    isConnecting = false;
+            //}
         }
 
         public override void OnDisconnected(DisconnectCause cause)
@@ -138,6 +141,10 @@ namespace KnockOff.Launcher
             }
         }
 
+        public void OnConnectClicked()
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
         #endregion
     }
 }
