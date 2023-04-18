@@ -19,7 +19,7 @@ namespace KnockOff.Player
 
         #region Private Fields
 
-        bool IsFiring;
+        private PlayerMovement playerMovement;
 
         [SerializeField]
         Item[] items;
@@ -54,23 +54,6 @@ namespace KnockOff.Player
             if (!TryGetComponent(out playerAnimatorManager))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Animation Manager Component on playerPrefab.", this);*/
         }
-        /*
-        private void Start()
-        {
-            CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
-            EquipItem(0);
-            if (_cameraWork != null)
-            {
-                if (photonView.IsMine)
-                {
-                    _cameraWork.OnStartFollowing();
-                }
-            }
-            else
-            {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
-            }
-        }*/
 
         private void Update()
         {
