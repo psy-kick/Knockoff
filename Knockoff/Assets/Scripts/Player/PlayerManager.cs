@@ -6,6 +6,8 @@ using Photon.Pun.Demo.PunBasics;
 
 namespace KnockOff.Player
 {
+    [RequireComponent(typeof(PlayerMovement))]
+    //[RequireComponent(typeof(PlayerAnimatorManager))]
     public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         #region Public Fields 
@@ -17,11 +19,12 @@ namespace KnockOff.Player
 
         #region Private Fields
 
-        bool IsFiring;
-
-        //this is where health would be if we had health
+        private PlayerMovement playerMovement;
+        //private PlayerAnimatorManager playerAnimatorManager;
 
         #endregion
+
+        public bool IsFiring { get; set; }      //networked
 
 
         #region Monobehaviour Callbacks
@@ -37,6 +40,13 @@ namespace KnockOff.Player
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
+
+            if (!TryGetComponent(out playerMovement))
+                Debug.LogError("<Color=Red><a>Missing</a></Color> Player Movement Component on playerPrefab.", this);
+
+            /*
+            if (!TryGetComponent(out playerAnimatorManager))
+                Debug.LogError("<Color=Red><a>Missing</a></Color> Player Animation Manager Component on playerPrefab.", this);*/
         }
 
         private void Start()
@@ -54,7 +64,6 @@ namespace KnockOff.Player
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             }
-
         }
 
         private void Update()
@@ -79,7 +88,6 @@ namespace KnockOff.Player
             if (!photonView.IsMine)    // we dont' do anything if we are not the local player.
                 return;
 
-
         }
 
         private void OnTriggerStay(Collider other)
@@ -98,10 +106,12 @@ namespace KnockOff.Player
             if (stream.IsWriting)
             {    // We own this player: send the others our data
                 stream.SendNext(IsFiring);
+                stream.SendNext(playerMovement.isGrounded);
             }
             else
             {    // Network player, receive data
                 this.IsFiring = (bool)stream.ReceiveNext();
+                this.playerMovement.isGrounded = (bool)stream.ReceiveNext();
             }
         }
 
