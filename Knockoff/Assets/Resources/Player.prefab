@@ -1675,21 +1675,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
-  SprintSpeed: 8
+  SprintSpeed: 8.5
   JumpImpulse: 10
   SpeedChangeRate: 10
   RotationSpeed: 50
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  sensitivity: 5
+  camTarget: {fileID: 2181353103130467121}
+  mouseSensitivity: 100
   TopClamp: 60
   BottomClamp: -20
-  camTarget: {fileID: 2181353103130467121}
   LandingAudioClip: {fileID: 0}
   FootstepAudioClips: []
   FootstepAudioVolume: 0.5
-  mouseSensitivity: 100
 --- !u!114 &7014183723934615842
 MonoBehaviour:
   m_ObjectHideFlags: 0

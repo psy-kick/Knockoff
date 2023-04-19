@@ -19,18 +19,17 @@ namespace KnockOff.Player
         public float JumpImpulse = 5f;
 
         [Tooltip("Acceleration and deceleration")]
-        public float SpeedChangeRate = 10.0f;
-
-        [Tooltip("Character Rotation Speed")]
-        public float RotationSpeed = 5f;
+        public float SpeedChangeRate = 10.0f;       //might be removed
 
         [Tooltip("Specify ground layer mask for detection of IsGrounded")]
         public LayerMask groundLayer;
 
-
         [Header("Camera Settings")]
+        [Tooltip("The camera target of the player")]
+        public Transform camTarget;
+
         [Tooltip("The speed at which the camera rotates around the character")]
-        public float sensitivity = 5f;
+        public float mouseSensitivity = 100f;
 
         [Tooltip("How far in degrees can you move the camera up")]
         public float TopClamp = 60f;
@@ -40,20 +39,23 @@ namespace KnockOff.Player
 
         [Space(10)]
 
-        public Transform camTarget;
-        private float maxVelocityChange = 10f;
+        [Header("Audio Settings")]
         public AudioClip LandingAudioClip;
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
 
+        #region Private Fields
         private Rigidbody rb;
-        [SerializeField] private float mouseSensitivity = 100f;
         private Vector2 _rotation = Vector2.zero;
 
-        private bool isSprinting;       //will be handled through stamina
+        #endregion
 
+        #region Public Fields
+        public bool isSprinting { get; set; }       //will be handled through stamina
         public bool isGrounded { get; set; }    //networked
+
+        #endregion
 
         private void Awake()
         {
@@ -103,7 +105,7 @@ namespace KnockOff.Player
             Vector3 moveDirection = transform.rotation * (Vector3.right * movement.x + Vector3.forward * movement.z);
 
             // Apply the movement vector to the Rigidbody's velocity
-            rb.velocity = moveDirection * MoveSpeed + new Vector3(0f, rb.velocity.y, 0f);
+            rb.velocity = moveDirection * speed + new Vector3(0f, rb.velocity.y, 0f);
         }
 
 

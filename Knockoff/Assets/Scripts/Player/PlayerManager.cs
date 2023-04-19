@@ -136,11 +136,13 @@ namespace KnockOff.Player
             {    // We own this player: send the others our data
                 stream.SendNext(IsFiring);
                 stream.SendNext(playerMovement.isGrounded);
+                stream.SendNext(playerMovement.isSprinting);
             }
             else
             {    // Network player, receive data
                 this.IsFiring = (bool)stream.ReceiveNext();
                 this.playerMovement.isGrounded = (bool)stream.ReceiveNext();
+                this.playerMovement.isSprinting = (bool)stream.ReceiveNext();
             }
         }
 
