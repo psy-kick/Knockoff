@@ -132,6 +132,12 @@ namespace KnockOff.Player
                 isGrounded = true;
         }
 
+        private void OnCollisionStay(Collision collision)
+        {
+            if (collision.gameObject.layer == 3)
+                isGrounded = true;
+        }
+
         private void OnCollisionExit(Collision collision)
         {
             if (collision.gameObject.layer == 3)
