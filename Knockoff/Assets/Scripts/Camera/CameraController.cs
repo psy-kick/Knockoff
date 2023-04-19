@@ -8,7 +8,7 @@ namespace KnockOff.Camera
 {
     public class CameraController : MonoBehaviourPun
     {
-        private CinemachineVirtualCamera virtualCamera;
+        private GameObject virtualCamera;
 
         private void Update()
         {
@@ -21,16 +21,14 @@ namespace KnockOff.Camera
             // Find the CinemachineVirtualCamera object in the scene
             if (virtualCamera == null)
             {
-                virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+                virtualCamera = GameObject.FindGameObjectWithTag("3dCam");
             }
 
             PhotonView playerPhotonView = GetComponent<PhotonView>();
-
             // Set the virtual camera to follow the local player
             if (playerPhotonView != null)
             {
-                virtualCamera.Follow = playerPhotonView.transform.GetChild(0);       //camTarget, less expensive than findbytag
-                virtualCamera.LookAt = playerPhotonView.transform.GetChild(0);      //camTarget, less expensive than findbytag
+                virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0);       //camTarget, less expensive than findbytag
             }
         }
     }
