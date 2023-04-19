@@ -15,6 +15,7 @@ namespace KnockOff.Game
 
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
+        public GameObject crosshair;
 
         #endregion
 

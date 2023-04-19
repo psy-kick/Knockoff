@@ -48,7 +48,7 @@ namespace KnockOff.Player
 
 
         private Rigidbody rb;
-        private float mouseSensitivity = 100f;
+        [SerializeField] private float mouseSensitivity = 100f;
         private Vector2 _rotation = Vector2.zero;
 
         private bool isSprinting;       //will be handled through stamina
@@ -138,6 +138,10 @@ namespace KnockOff.Player
                 isGrounded = false;
         }
 
+        public void SetSensitivity(float newSensitivity)
+        {
+            mouseSensitivity = newSensitivity;
+        }
 
         /*
         private void OnFootstep(AnimationEvent animationEvent)

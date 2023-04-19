@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - CamTarget
+  - aimCam
+  - 3dCam
   layers:
   - Default
   - TransparentFX
