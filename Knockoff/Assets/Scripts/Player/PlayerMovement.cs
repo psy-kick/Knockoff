@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using System.Linq;
 
 namespace KnockOff.Player
 {
@@ -10,13 +9,16 @@ namespace KnockOff.Player
     {
         [Header("Player Settings")]
         [Tooltip("Move speed of the character in m/s")]
-        public float MoveSpeed = 5f;
+        public float MoveSpeed = 8.5f;
 
         [Tooltip("Sprint speed of the character in m/s")]
-        public float SprintSpeed = 8f;
+        public float SprintSpeed = 15f;
 
         [Tooltip("The height the player can jump")]
-        public float JumpImpulse = 5f;
+        public float JumpImpulse = 9f;
+
+        [Tooltip("The jump cooldown for multiple jumps")]
+        public float JumpCooldown = 1f;
 
         [Tooltip("Acceleration and deceleration")]
         public float SpeedChangeRate = 10.0f;       //might be removed
@@ -27,9 +29,6 @@ namespace KnockOff.Player
         [Header("Camera Settings")]
         [Tooltip("The camera target of the player")]
         public Transform camTarget;
-
-        [Tooltip("The speed at which the camera rotates around the character")]
-        public float mouseSensitivity = 100f;
 
         [Tooltip("How far in degrees can you move the camera up")]
         public float TopClamp = 60f;
@@ -46,8 +45,10 @@ namespace KnockOff.Player
 
 
         #region Private Fields
+        private float mouseSensitivity;
         private Rigidbody rb;
         private Vector2 _rotation = Vector2.zero;
+        private bool canJump = true;
 
         #endregion
 
@@ -119,14 +120,20 @@ namespace KnockOff.Player
             }
         }
 
-        public void Jump()
+        public void Jump()      //need to turn it into multiple jumps with a cooldown
         {
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space) && canJump)
             {
                 rb.AddForce(Vector3.up * JumpImpulse, ForceMode.Impulse);
+                canJump = false;
+                StartCoroutine(WaitForJumpCooldown());
             }
         }
-
+        private IEnumerator WaitForJumpCooldown()
+        {
+            yield return new WaitForSeconds(JumpCooldown);
+            canJump = true;
+        }
 
         private void OnCollisionEnter(Collision collision)
         {

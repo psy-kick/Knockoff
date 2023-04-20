@@ -1587,7 +1587,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.47, y: 1.5, z: 1}
+  m_Size: {x: 2.47, y: 1.75, z: 1}
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!114 &582522939827153177
 MonoBehaviour:
@@ -1674,16 +1674,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9fcd68a75f47241b6fccdf5bea233f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  SprintSpeed: 8.5
-  JumpImpulse: 10
+  MoveSpeed: 8.5
+  SprintSpeed: 15
+  JumpImpulse: 9
+  JumpCooldown: 1.2
   SpeedChangeRate: 10
-  RotationSpeed: 50
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   camTarget: {fileID: 2181353103130467121}
-  mouseSensitivity: 100
   TopClamp: 60
   BottomClamp: -20
   LandingAudioClip: {fileID: 0}
@@ -1732,8 +1731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68579d1cd99f6e4e8fe1988e57473a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSensitivity: 50
-  aimSensitivity: 40
+  normalSensitivity: 100
+  aimSensitivity: 80
 --- !u!1 &2808734218877236346
 GameObject:
   m_ObjectHideFlags: 0
