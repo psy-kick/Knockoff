@@ -302,7 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651acc310b68a784bb740d4a23182be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayersPerRoom: 4
   controlPanel: {fileID: 582796868}
   progressLabel: {fileID: 180362275}
 --- !u!1 &535067331

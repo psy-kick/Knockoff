@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Pun.Demo.PunBasics;
+using Photon.Pun.UtilityScripts;
+using Photon.Realtime;
+using UnityEngine.Events;
 
 namespace KnockOff.Player
 {
@@ -29,7 +31,10 @@ namespace KnockOff.Player
 
         #endregion
 
+        public PhotonTeam playerTeam { get; private set; }
         public bool IsFiring { get; set; }      //networked
+
+        public static UnityEvent OnTeamAssignment;
 
 
         #region Monobehaviour Callbacks
@@ -48,13 +53,25 @@ namespace KnockOff.Player
 
             if (!TryGetComponent(out playerMovement))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Movement Component on playerPrefab.", this);
-
             /*
             if (!TryGetComponent(out playerAnimatorManager))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Animation Manager Component on playerPrefab.", this);*/
+
+            OnTeamAssignment = new UnityEvent();
         }
 
- 
+        public override void OnEnable()
+        {
+            base.OnEnable();
+            OnTeamAssignment.AddListener(AlertPlayersAboutTeams);
+        }
+
+        public override void OnDisable()
+        {
+            OnTeamAssignment.RemoveListener(AlertPlayersAboutTeams);
+        }
+
+
         private void Start()
         {
             EquipItem(0);
@@ -69,7 +86,21 @@ namespace KnockOff.Player
                 ProcessInputs();
                 WeaponSwitchInputs();
             }
+        }
 
+        private void AlertPlayersAboutTeams()
+        {
+            playerTeam = PhotonTeamExtensions.GetPhotonTeam(photonView.Owner);
+            Debug.LogError(photonView.Owner);
+            photonView.RPC("SetTeam", RpcTarget.All, playerTeam.Name);
+        }
+
+        // (Optional) Update the player's UI or display a message
+        [PunRPC]
+        public void SetTeam(string teamName)
+        {
+            Debug.LogError(teamName);
+            Debug.LogFormat("You have been assigned to the <Color={0}><a>{0}</a></Color> team.", teamName);
         }
 
         private void WeaponSwitchInputs()
