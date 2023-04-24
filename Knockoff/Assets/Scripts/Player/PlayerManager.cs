@@ -154,6 +154,7 @@ namespace KnockOff.Player
             {
                 if (!IsFiring)
                 {
+                    items[itemIndex].Use();
                     IsFiring = true;
                 }
             }
