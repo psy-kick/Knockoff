@@ -82,8 +82,7 @@ namespace KnockOff.Player
             if (photonView.IsMine)
             {
                 playerTeam = team;
-                Debug.LogError(team.Name);
-                Debug.LogFormat("You have been assigned to the <Color={0}><a>{0}</a></Color> team.", team.Name);
+                Debug.LogFormat("{0}, You have been assigned to the <Color={1}><a>{1}</a></Color> team.", p.NickName, playerTeam.Name);
             }
         }
 
