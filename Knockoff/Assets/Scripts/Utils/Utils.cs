@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public static class Utils
@@ -29,5 +29,20 @@ public static class Utils
         if (lfAngle < -360f) lfAngle += 360f;
         if (lfAngle > 360f) lfAngle -= 360f;
         return Mathf.Clamp(lfAngle, lfMin, lfMax);
+    }
+
+    // Get the GameObject for a specific player
+    public static GameObject GetPlayerGameObject(Player player)
+    {
+        PhotonView[] photonViews = GameObject.FindObjectsOfType<PhotonView>();
+
+        foreach (PhotonView photonView in photonViews)
+        {
+            if (photonView.Owner == player)
+            {
+                return photonView.gameObject;
+            }
+        }
+        return null;
     }
 }

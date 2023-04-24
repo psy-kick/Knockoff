@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Pun.Demo.PunBasics;
+using Photon.Pun.UtilityScripts;
 
 namespace KnockOff.Player
 {
@@ -29,8 +29,8 @@ namespace KnockOff.Player
 
         #endregion
 
+        public PhotonTeam playerTeam { get; private set; }
         public bool IsFiring { get; set; }      //networked
-
 
         #region Monobehaviour Callbacks
 
@@ -48,13 +48,19 @@ namespace KnockOff.Player
 
             if (!TryGetComponent(out playerMovement))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Movement Component on playerPrefab.", this);
-
             /*
             if (!TryGetComponent(out playerAnimatorManager))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Animation Manager Component on playerPrefab.", this);*/
+
+            PhotonTeamsManager.PlayerJoinedTeam += AlertPlayersAboutTeams;
         }
 
- 
+        private void OnDestroy()
+        {
+            PhotonTeamsManager.PlayerJoinedTeam -= AlertPlayersAboutTeams;
+        }
+
+
         private void Start()
         {
             EquipItem(0);
@@ -69,7 +75,15 @@ namespace KnockOff.Player
                 ProcessInputs();
                 WeaponSwitchInputs();
             }
+        }
 
+        private void AlertPlayersAboutTeams(Photon.Realtime.Player p, PhotonTeam team)
+        {
+            if (photonView.IsMine)
+            {
+                playerTeam = team;
+                Debug.LogFormat("{0}, You have been assigned to the <Color={1}><a>{1}</a></Color> team.", p.NickName, playerTeam.Name);
+            }
         }
 
         private void WeaponSwitchInputs()
