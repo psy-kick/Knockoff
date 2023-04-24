@@ -34,8 +34,6 @@ public class TeamAllocator : MonoBehaviourPunCallbacks
                 // Assign the player to the team
                 players[i].JoinTeam(teamName);
             }
-
-            PlayerManager.OnTeamAssignment?.Invoke();
         }
     }
 

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using Photon.Realtime;
-using UnityEngine.Events;
 
 namespace KnockOff.Player
 {
@@ -34,9 +32,6 @@ namespace KnockOff.Player
         public PhotonTeam playerTeam { get; private set; }
         public bool IsFiring { get; set; }      //networked
 
-        public static UnityEvent OnTeamAssignment;
-
-
         #region Monobehaviour Callbacks
 
         private void Awake()
@@ -57,18 +52,12 @@ namespace KnockOff.Player
             if (!TryGetComponent(out playerAnimatorManager))
                 Debug.LogError("<Color=Red><a>Missing</a></Color> Player Animation Manager Component on playerPrefab.", this);*/
 
-            OnTeamAssignment = new UnityEvent();
+            PhotonTeamsManager.PlayerJoinedTeam += AlertPlayersAboutTeams;
         }
 
-        public override void OnEnable()
+        private void OnDestroy()
         {
-            base.OnEnable();
-            OnTeamAssignment.AddListener(AlertPlayersAboutTeams);
-        }
-
-        public override void OnDisable()
-        {
-            OnTeamAssignment.RemoveListener(AlertPlayersAboutTeams);
+            PhotonTeamsManager.PlayerJoinedTeam -= AlertPlayersAboutTeams;
         }
 
 
@@ -88,19 +77,14 @@ namespace KnockOff.Player
             }
         }
 
-        private void AlertPlayersAboutTeams()
+        private void AlertPlayersAboutTeams(Photon.Realtime.Player p, PhotonTeam team)
         {
-            playerTeam = PhotonTeamExtensions.GetPhotonTeam(photonView.Owner);
-            Debug.LogError(photonView.Owner);
-            photonView.RPC("SetTeam", RpcTarget.All, playerTeam.Name);
-        }
-
-        // (Optional) Update the player's UI or display a message
-        [PunRPC]
-        public void SetTeam(string teamName)
-        {
-            Debug.LogError(teamName);
-            Debug.LogFormat("You have been assigned to the <Color={0}><a>{0}</a></Color> team.", teamName);
+            if (photonView.IsMine)
+            {
+                playerTeam = team;
+                Debug.LogError(team.Name);
+                Debug.LogFormat("You have been assigned to the <Color={0}><a>{0}</a></Color> team.", team.Name);
+            }
         }
 
         private void WeaponSwitchInputs()
