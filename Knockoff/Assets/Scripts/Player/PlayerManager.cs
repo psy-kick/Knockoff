@@ -15,6 +15,7 @@ namespace KnockOff.Player
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
+        public GameObject projectile;
         #endregion
 
         #region Private Fields
@@ -168,6 +169,7 @@ namespace KnockOff.Player
             {
                 if (!IsFiring)
                 {
+                    items[itemIndex].Use();
                     IsFiring = true;
                 }
             }
