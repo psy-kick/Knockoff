@@ -5,15 +5,21 @@ using Photon.Pun;
 
 public class RocketLauncherProjectile : Gun
 {
-    private GameObject projectile;
+    private Rigidbody projectile;
+    public Transform SpawnPoint;
     [SerializeField]
     float projectileSpeed = 10f;
+    private void Awake()
+    {
+        projectile = GetComponentInChildren<Rigidbody>();
+    }
     public override void Use()
     {
-        Shoot();
+        Shoot(projectile);
     }
-    void Shoot()
+    void Shoot(Rigidbody _projectile)
     {
-        projectile.GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
+        _projectile = Instantiate(projectile,SpawnPoint.position, transform.rotation);
+        _projectile.velocity = transform.forward * projectileSpeed;
     }
 }

@@ -1309,30 +1309,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8574258190876428553}
     m_Modifications:
-    - target: {fileID: 2651236304294590883, guid: 1a0f7de177613a044a751321581a0845,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3783086924362072780, guid: 1a0f7de177613a044a751321581a0845,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3783086924362072780, guid: 1a0f7de177613a044a751321581a0845,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 17.55191
-      objectReference: {fileID: 0}
-    - target: {fileID: 3783086924362072780, guid: 1a0f7de177613a044a751321581a0845,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 17.55191
-      objectReference: {fileID: 0}
-    - target: {fileID: 3783086924362072780, guid: 1a0f7de177613a044a751321581a0845,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 11.390138
       objectReference: {fileID: 0}
     - target: {fileID: 3783086924362072780, guid: 1a0f7de177613a044a751321581a0845,
         type: 3}
@@ -1388,11 +1368,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Muzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597024232796756086, guid: 1a0f7de177613a044a751321581a0845,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a0f7de177613a044a751321581a0845, type: 3}
