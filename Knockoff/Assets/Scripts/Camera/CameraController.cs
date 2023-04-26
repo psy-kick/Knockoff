@@ -15,11 +15,18 @@ namespace KnockOff.Camera
         [SerializeField] private float aimSensitivity;
 
         private PlayerMovement playerMovement;
+        private PhotonView playerPhotonView;
 
         private void Awake()
         {
             playerMovement = GetComponent<PlayerMovement>();
         }
+
+        private void Start()
+        {
+            playerPhotonView = GetComponent<PhotonView>();
+        }
+        
         private void Update()
         {
             // Only execute this code for the local player
@@ -27,7 +34,7 @@ namespace KnockOff.Camera
             {
                 return;
             }
-            PhotonView playerPhotonView = GetComponent<PhotonView>();
+
             // Find the CinemachineVirtualCamera object in the scene
             VirtualCam(playerPhotonView);
             AimCam(playerPhotonView);
