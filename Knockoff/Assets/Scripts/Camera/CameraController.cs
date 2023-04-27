@@ -25,6 +25,9 @@ namespace KnockOff.Camera
         private void Start()
         {
             playerPhotonView = GetComponent<PhotonView>();
+
+            virtualCamera = GameObject.FindGameObjectWithTag("3dCam");
+            aimVirtualCam = GameObject.FindGameObjectWithTag("aimCam");
         }
         
         private void Update()

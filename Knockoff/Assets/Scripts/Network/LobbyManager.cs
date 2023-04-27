@@ -44,7 +44,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         ////Waiting Room
-        if (PhotonNetwork.CurrentRoom.PlayerCount < maxPlayersPerRoom)
+        if (PhotonNetwork.CurrentRoom.PlayerCount < maxPlayersPerRoom || PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
             PhotonNetwork.LoadLevel("WaitingRoom");
         }

@@ -13,7 +13,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         DontDestroyOnLoad(gameObject);
     }
-    
+
+    private void Start()
+    {
+        LoadArena();
+    }
+
     public void LoadArena()
     {
         if (!PhotonNetwork.IsMasterClient)
@@ -52,7 +57,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
             //LoadArena();
         }
     }
-
 
     /// <summary>
     /// Called when the local player left the room. We need to load the launcher scene.
