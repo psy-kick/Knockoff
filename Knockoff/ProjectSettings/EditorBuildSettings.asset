@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/WaitingRoom.unity
     guid: c1b12b05d2e2313479ce425fd3c82157
   - enabled: 1
-    path: Assets/Scenes/Room for 4.unity
-    guid: 7b2881e6a0676ed44ba2c3a94ab52abb
-  - enabled: 1
     path: Assets/Scenes/blockout_level.unity
     guid: 689ee29fefa69e542abcf23d70df8e05
   m_configObjects: {}

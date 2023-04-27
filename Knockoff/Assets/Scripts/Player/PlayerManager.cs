@@ -85,6 +85,9 @@ namespace KnockOff.Player
             {
                 playerTeam = team;
                 Debug.LogFormat("{0}, You have been assigned to the <Color={1}><a>{1}</a></Color> team.", p.NickName, playerTeam.Name);
+
+                // Set the TagObject property to the player's GameObject
+                p.TagObject = this.gameObject;
             }
         }
 
