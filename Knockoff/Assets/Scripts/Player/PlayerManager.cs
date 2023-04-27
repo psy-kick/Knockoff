@@ -98,28 +98,30 @@ namespace KnockOff.Player
                     break;
                 }
             }
-            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
-            {
-                if (itemIndex >= items.Length - 1)
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, 0);
-                }
-                else
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, itemIndex + 1);
-                }
-            }
-            else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
-            {
-                if (itemIndex <= 0)
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, items.Length - 1);
-                }
-                else
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, itemIndex - 1);
-                }
-            }
+            #region Remove when testing is done This is for scrollwheel
+            //if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+            //{
+            //    if (itemIndex >= items.Length - 1)
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, 0);
+            //    }
+            //    else
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, itemIndex + 1);
+            //    }
+            //}
+            //else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+            //{
+            //    if (itemIndex <= 0)
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, items.Length - 1);
+            //    }
+            //    else
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, itemIndex - 1);
+            //    }
+            //}
+            #endregion
         }
 
         /// <summary>

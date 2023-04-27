@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e6bfe2c6af2c14b8b2286e56213d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayersPerRoom: 4
+  maxPlayersPerRoom: 1
   roomManagerPrefab: {fileID: 1285975600062512082, guid: 05d786f22431d9b45835a75cd1d44757,
     type: 3}
   roomInputfield: {fileID: 0}
