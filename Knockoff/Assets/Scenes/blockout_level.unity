@@ -5910,15 +5910,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1785828006510410405, guid: cd9e78314cd7f4b43a9ceb316f30e260,
+    - target: {fileID: 1177338167390282898, guid: cd9e78314cd7f4b43a9ceb316f30e260,
         type: 3}
-      propertyPath: sceneViewId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2370484106533772001, guid: cd9e78314cd7f4b43a9ceb316f30e260,
-        type: 3}
-      propertyPath: sceneViewId
-      value: 1
+      propertyPath: projectileSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2808734218877236344, guid: cd9e78314cd7f4b43a9ceb316f30e260,
         type: 3}
@@ -14824,7 +14819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1997751483400066, guid: aa3f638fec520364c975f9d22cec12ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4124746951173764, guid: aa3f638fec520364c975f9d22cec12ce, type: 3}
       propertyPath: m_LocalPosition.y
