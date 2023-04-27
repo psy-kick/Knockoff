@@ -4,7 +4,6 @@ using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TeamAllocator : MonoBehaviourPunCallbacks
 {

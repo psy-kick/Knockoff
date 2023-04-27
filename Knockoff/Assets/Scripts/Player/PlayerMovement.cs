@@ -124,6 +124,9 @@ namespace KnockOff.Player
         {
             if (Input.GetKeyDown(KeyCode.Space) && canJump)
             {
+                if (rb.velocity != Vector3.zero)
+                    rb.velocity = Vector3.zero;
+
                 rb.AddForce(Vector3.up * JumpImpulse, ForceMode.Impulse);
                 canJump = false;
                 StartCoroutine(WaitForJumpCooldown());

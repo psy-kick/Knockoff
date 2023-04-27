@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
+using Photon.Realtime;
 
 namespace KnockOff.Player
 {
@@ -15,6 +16,7 @@ namespace KnockOff.Player
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
+        public GameObject projectile;
         #endregion
 
         #region Private Fields
@@ -96,28 +98,30 @@ namespace KnockOff.Player
                     break;
                 }
             }
-            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
-            {
-                if (itemIndex >= items.Length - 1)
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, 0);
-                }
-                else
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, itemIndex + 1);
-                }
-            }
-            else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
-            {
-                if (itemIndex <= 0)
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, items.Length - 1);
-                }
-                else
-                {
-                    photonView.RPC("EquipItem", RpcTarget.All, itemIndex - 1);
-                }
-            }
+            #region Remove when testing is done This is for scrollwheel
+            //if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+            //{
+            //    if (itemIndex >= items.Length - 1)
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, 0);
+            //    }
+            //    else
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, itemIndex + 1);
+            //    }
+            //}
+            //else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+            //{
+            //    if (itemIndex <= 0)
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, items.Length - 1);
+            //    }
+            //    else
+            //    {
+            //        photonView.RPC("EquipItem", RpcTarget.All, itemIndex - 1);
+            //    }
+            //}
+            #endregion
         }
 
         /// <summary>
@@ -168,6 +172,7 @@ namespace KnockOff.Player
             {
                 if (!IsFiring)
                 {
+                    items[itemIndex].Use();
                     IsFiring = true;
                 }
             }
