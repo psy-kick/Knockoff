@@ -8,25 +8,31 @@ using TMPro;
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
-    public byte maxPlayersPerRoom = 4;
+    [SerializeField] private byte maxPlayersPerRoom = 4;
 
-    public TMP_InputField roomInputfield;
-    
-    public GameObject LobbyPanel;
-    public GameObject ErrorPanel;
-    public RoomItem roomItemPrefab;
+    [SerializeField] private GameObject roomManagerPrefab;
+
+    [SerializeField] private TMP_InputField roomInputfield;
+
+    [SerializeField] private GameObject LobbyPanel;
+    [SerializeField] private GameObject ErrorPanel;
+    [SerializeField] private RoomItem roomItemPrefab;
 
     List<RoomItem> roomItemsList = new List<RoomItem>();
-    public Transform contentObject;
+    [SerializeField] private Transform contentObject;
 
     public float timeBetweenUpdates = 1.5f;
     float nextUpdateTime;
     private string existingName;
 
+    public static byte MaxPlayersPerRoom;
+
     private void Start()
     {
         PhotonNetwork.JoinLobby();
+        MaxPlayersPerRoom = maxPlayersPerRoom;
     }
+
     public void OnClickCreate()
     {
         if (roomInputfield.text.Length >= 1)
@@ -34,6 +40,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             PhotonNetwork.CreateRoom(roomInputfield.text, new RoomOptions() { MaxPlayers = maxPlayersPerRoom });
         }
     }
+
     public override void OnJoinedRoom()
     {
         ////Waiting Room
@@ -41,22 +48,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LoadLevel("WaitingRoom");
         }
-        ////Game Room
-        else
-        {
-            PhotonNetwork.LoadLevel("Room for 4");
-        }
-
-        //if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
-        //{
-        //    PhotonNetwork.LoadLevel("Room for 1");
-        //}
-        ////Game Room
-        //else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
-        //{
-        //    PhotonNetwork.LoadLevel("Room for 4");
-        //}
     }
+
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         if(Time.time >= nextUpdateTime)
@@ -85,6 +78,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinRoom(_roomname);
     }
+
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby();
