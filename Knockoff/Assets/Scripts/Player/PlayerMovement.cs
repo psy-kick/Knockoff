@@ -58,10 +58,6 @@ namespace KnockOff.Player
         public bool isSprinting { get; set; }       //will be handled through stamina
         public bool isGrounded { get; set; }    //networked
 
-        [HideInInspector] public bool useMouseInput = true;
-
-        public Quaternion spawnRot { get; set; }
-
 
         #endregion
 
@@ -85,25 +81,15 @@ namespace KnockOff.Player
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-            if (useMouseInput)
-            {
-                _rotation.y -= mouseY;
-                _rotation.x += mouseX;
-                _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
+            _rotation.y -= mouseY;
+            _rotation.x = mouseX;
+            _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
 
-                Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
-                Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
+            Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
+            Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
 
-                transform.rotation = rot;
-                camTarget.rotation = camRot;
-            }
-        }
-
-        public void SetRotation(Quaternion rot)
-        {
-            useMouseInput = false;
-            playerRotationModel.rotation = rot;
-            camTarget.rotation = rot;
+            transform.rotation = rot;
+            camTarget.rotation = camRot;
         }
 
         public void Move()

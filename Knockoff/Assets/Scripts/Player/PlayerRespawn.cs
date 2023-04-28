@@ -14,7 +14,7 @@ public class PlayerRespawn : MonoBehaviour
 
     public void Respawn()
     {
-        SpawnManager.spawnPlayer?.Invoke(transform, playerManager.playerTeam);
+        SpawnManager.respawnPlayer?.Invoke(transform, playerManager.playerTeam);
 
         //update scoring system (give point to opposing team)
     }
