@@ -10,7 +10,7 @@ namespace KnockOff.Game
     {
 
         #region Public Fields
-        public static GameManager Instance { get; private set; }
+        public static GameManager instance { get; private set; }
 
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
@@ -20,9 +20,28 @@ namespace KnockOff.Game
 
         #region Monobehaviour Callbacks
 
+
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(this);
+            }
+            else
+            {
+                Destroy(instance);
+            }
+        }
+
         private void Start()
         {
-            Instance = this;
+            CreatePlayerPrefab(new Vector3(0f, 5f, 0f));            
+        }
+
+        public GameObject CreatePlayerPrefab(Vector3 pos)
+        {
+            GameObject player = null;
 
             if (playerPrefab == null)
             {
@@ -34,14 +53,16 @@ namespace KnockOff.Game
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+                    player = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
                 }
                 else
                 {
                     Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
                 }
-            
+
             }
+
+            return player;
         }
 
         #endregion

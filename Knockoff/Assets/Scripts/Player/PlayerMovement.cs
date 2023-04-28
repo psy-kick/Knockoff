@@ -26,6 +26,9 @@ namespace KnockOff.Player
         [Tooltip("Specify ground layer mask for detection of IsGrounded")]
         public LayerMask groundLayer;
 
+        [Tooltip("rot")]
+        public Transform playerRotationModel;
+
         [Header("Camera Settings")]
         [Tooltip("The camera target of the player")]
         public Transform camTarget;
@@ -43,7 +46,6 @@ namespace KnockOff.Player
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
-
         #region Private Fields
         private float mouseSensitivity;
         private Rigidbody rb;
@@ -55,6 +57,11 @@ namespace KnockOff.Player
         #region Public Fields
         public bool isSprinting { get; set; }       //will be handled through stamina
         public bool isGrounded { get; set; }    //networked
+
+        [HideInInspector] public bool useMouseInput = true;
+
+        public Quaternion spawnRot { get; set; }
+
 
         #endregion
 
@@ -78,20 +85,30 @@ namespace KnockOff.Player
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-            _rotation.y -= mouseY;
-            _rotation.x += mouseX;
-            _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
+            if (useMouseInput)
+            {
+                _rotation.y -= mouseY;
+                _rotation.x += mouseX;
+                _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
 
-            Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
-            Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
+                Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
+                Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
 
-            transform.rotation = rot;
-            camTarget.rotation = camRot;
+                transform.rotation = rot;
+                camTarget.rotation = camRot;
+            }
+        }
+
+        public void SetRotation(Quaternion rot)
+        {
+            useMouseInput = false;
+            playerRotationModel.rotation = rot;
+            camTarget.rotation = rot;
         }
 
         public void Move()
         {
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && isGrounded)
                 isSprinting = true;
             else
                 isSprinting = false;
@@ -104,7 +121,6 @@ namespace KnockOff.Player
             Vector3 movement = new Vector3(horizontal, 0.0f, vertical).normalized;
 
             Vector3 moveDirection = transform.rotation * (Vector3.right * movement.x + Vector3.forward * movement.z);
-
             // Apply the movement vector to the Rigidbody's velocity
             rb.velocity = moveDirection * speed + new Vector3(0f, rb.velocity.y, 0f);
         }
