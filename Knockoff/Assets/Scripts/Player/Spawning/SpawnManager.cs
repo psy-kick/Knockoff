@@ -1,31 +1,35 @@
+using KnockOff.Player;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using Photon.Realtime;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnManager : MonoBehaviour
 {
-    private List<Player> players;
-
     [SerializeField] private SpawnPoint[] BlueTeamSpawnPts;
     [SerializeField] private SpawnPoint[] RedTeamSpawnPts;
 
+    public static UnityEvent<Transform, PhotonTeam> respawnPlayer;
+
+    private Vector3 localSpawnOffset = new Vector3(0, 0, 1);
+    private float spawnForwardOffset = 2.0f;
+
     private void Awake()
     {
-        PhotonTeamsManager.PlayerJoinedTeam += SpawnPlayers;
+        respawnPlayer = new UnityEvent<Transform, PhotonTeam>();
     }
 
-    private void OnDestroy()
+    private void OnEnable()
+    {
+        PhotonTeamsManager.PlayerJoinedTeam += SpawnPlayers;
+        respawnPlayer.AddListener(RespawnPlayer);
+    }
+
+    private void OnDisable()
     {
         PhotonTeamsManager.PlayerJoinedTeam -= SpawnPlayers;
-    }
-
-
-    private void Start()
-    {
-        players = new List<Player>(PhotonNetwork.PlayerList);
-
+        respawnPlayer.RemoveListener(RespawnPlayer);
     }
 
     public void SpawnPlayers(Photon.Realtime.Player p, PhotonTeam team)
@@ -34,16 +38,42 @@ public class SpawnManager : MonoBehaviour
         {
             int randomIndex = Random.Range(0, BlueTeamSpawnPts.Length);
             GameObject player = p.TagObject as GameObject;
-            player.transform.position = BlueTeamSpawnPts[randomIndex].transform.position;
+            Transform spawnPoint = BlueTeamSpawnPts[randomIndex].transform;
+
+            player.transform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
+            player.transform.rotation = spawnPoint.localRotation;
         }
         
         if (team == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
         {
             int randomIndex = Random.Range(0, RedTeamSpawnPts.Length);
             GameObject player = p.TagObject as GameObject;
-            player.transform.position = RedTeamSpawnPts[randomIndex].transform.position;
+            Transform spawnPoint = RedTeamSpawnPts[randomIndex].transform;
+
+            player.transform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
+            player.transform.rotation = spawnPoint.localRotation;
         }
     }
 
+    public void RespawnPlayer(Transform playerTransform, PhotonTeam playerTeam)
+    {
+        if (playerTeam == PhotonTeamsManager.Instance.GetAvailableTeams()[0])
+        {
+            int randomIndex = Random.Range(0, BlueTeamSpawnPts.Length);
+            Transform spawnPoint = BlueTeamSpawnPts[randomIndex].transform;
+
+            playerTransform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
+            playerTransform.rotation = spawnPoint.localRotation;
+        }
+
+        if (playerTeam == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
+        {
+            int randomIndex = Random.Range(0, RedTeamSpawnPts.Length);
+            Transform spawnPoint = RedTeamSpawnPts[randomIndex].transform;
+
+            playerTransform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
+            playerTransform.rotation = spawnPoint.localRotation;
+        }
+    }
 
 }

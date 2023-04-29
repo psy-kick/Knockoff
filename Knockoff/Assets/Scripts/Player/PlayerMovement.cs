@@ -34,7 +34,7 @@ namespace KnockOff.Player
         public float TopClamp = 60f;
 
         [Tooltip("How far in degrees can you move the camera down")]
-        public float BottomClamp = -20f;
+        public float BottomClamp = -40f;
 
         [Space(10)]
 
@@ -43,11 +43,10 @@ namespace KnockOff.Player
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
-
         #region Private Fields
+
         private float mouseSensitivity;
         private Rigidbody rb;
-        private Vector2 _rotation = Vector2.zero;
         private bool canJump = true;
 
         #endregion
@@ -75,23 +74,32 @@ namespace KnockOff.Player
 
         public void Look()
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
-            _rotation.y -= mouseY;
-            _rotation.x += mouseX;
-            _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
+            float rotationAmountX = mouseX * mouseSensitivity * Time.deltaTime;
+            float rotationAmountY = -mouseY * mouseSensitivity * Time.deltaTime;
 
-            Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
-            Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
+            transform.Rotate(Vector3.up, rotationAmountX);
 
-            transform.rotation = rot;
-            camTarget.rotation = camRot;
+            // Get the current rotation of the camTarget as a Quaternion
+            Quaternion camTargetRotation = camTarget.rotation;
+            // Calculate the new x rotation based on the current x rotation plus the rotation amount
+            float newCamTargetXRotation = camTargetRotation.eulerAngles.x + rotationAmountY;
+
+            if (newCamTargetXRotation > 180f)
+                newCamTargetXRotation -= 360f;
+
+            // Clamp the new x rotation to the desired range
+            newCamTargetXRotation = Mathf.Clamp(newCamTargetXRotation, BottomClamp, TopClamp);
+            // Set the new rotation of the camTarget as a Quaternion
+            camTargetRotation.eulerAngles = new Vector3(newCamTargetXRotation, camTargetRotation.eulerAngles.y, camTargetRotation.eulerAngles.z);
+            camTarget.rotation = camTargetRotation;
         }
 
         public void Move()
         {
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && isGrounded)
                 isSprinting = true;
             else
                 isSprinting = false;
@@ -104,7 +112,6 @@ namespace KnockOff.Player
             Vector3 movement = new Vector3(horizontal, 0.0f, vertical).normalized;
 
             Vector3 moveDirection = transform.rotation * (Vector3.right * movement.x + Vector3.forward * movement.z);
-
             // Apply the movement vector to the Rigidbody's velocity
             rb.velocity = moveDirection * speed + new Vector3(0f, rb.velocity.y, 0f);
         }
