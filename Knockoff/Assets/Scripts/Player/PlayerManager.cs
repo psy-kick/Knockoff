@@ -175,8 +175,8 @@ namespace KnockOff.Player
             {
                 if (!IsFiring)
                 {
-                    items[itemIndex].Use();
                     IsFiring = true;
+                    items[itemIndex].Use();
                 }
             }
             if (Input.GetButtonUp("Fire1"))
