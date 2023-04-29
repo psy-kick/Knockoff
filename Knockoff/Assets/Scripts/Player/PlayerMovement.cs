@@ -51,13 +51,14 @@ namespace KnockOff.Player
         private Rigidbody rb;
         private Vector2 _rotation = Vector2.zero;
         private bool canJump = true;
-
+        public float rotateSpeed = 5f;
         #endregion
 
         #region Public Fields
         public bool isSprinting { get; set; }       //will be handled through stamina
         public bool isGrounded { get; set; }    //networked
 
+        private bool canRotate = true;
 
         #endregion
 
@@ -81,15 +82,53 @@ namespace KnockOff.Player
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-            _rotation.y -= mouseY;
-            _rotation.x = mouseX;
-            _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
+            if (canRotate)
+            {
+                if (Mathf.Abs(mouseX) == 0 && Mathf.Abs(mouseY) == 0)
+                    _rotation = transform.rotation.eulerAngles / mouseSensitivity;
+
+                _rotation.y -= mouseY;
+                _rotation.x += mouseX;
+                _rotation.y = Mathf.Clamp(_rotation.y, BottomClamp, TopClamp);
+
+                Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
+                Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
+
+
+                transform.rotation = rot;
+                camTarget.rotation = camRot;
+            }
+        }
+
+        public void LookM()
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+
+            float rotationAmountX = mouseX * mouseSensitivity * Time.deltaTime;
+            float rotationAmountY = -mouseY * mouseSensitivity * Time.deltaTime;
+
+            transform.Rotate(Vector3.up, rotationAmountX);
+            camTarget.Rotate(Vector3.right, rotationAmountY);
+        }
+
+        public void SetRotation(Quaternion spawnRot)
+        {
+            canRotate = false;
+            
+            _rotation = spawnRot.eulerAngles / mouseSensitivity;
 
             Quaternion rot = Quaternion.Euler(0f, _rotation.x, 0f);
             Quaternion camRot = Quaternion.Euler(_rotation.y, _rotation.x, 0f);
 
-            transform.rotation = rot;
-            camTarget.rotation = camRot;
+            transform.rotation = rot * spawnRot;
+            camTarget.rotation = camRot * spawnRot;
+        }
+
+        public void ClearManualRotation()
+        {
+            _rotation = Vector2.zero;
+            canRotate = true;
         }
 
         public void Move()
@@ -116,7 +155,7 @@ namespace KnockOff.Player
         {
             if (photonView.IsMine)
             {
-                Look();
+                LookM();
                 Move();
                 Jump();
             }

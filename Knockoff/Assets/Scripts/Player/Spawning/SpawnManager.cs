@@ -45,7 +45,9 @@ public class SpawnManager : MonoBehaviour
             player.transform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
             player.transform.rotation = spawnPoint.localRotation;
 
-            //StartCoroutine(EnableRotationAfterDelay(1f, player.transform));
+            //player.transform.GetComponent<PlayerMovement>().SetRotation(spawnPoint.localRotation);
+
+            //StartCoroutine(EnableRotationAfterDelay(2f, player.transform));
         }
         
         if (team == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
@@ -59,7 +61,9 @@ public class SpawnManager : MonoBehaviour
             player.transform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
             player.transform.rotation = spawnPoint.localRotation;
 
-            //StartCoroutine(EnableRotationAfterDelay(1f, player.transform));
+            //player.transform.GetComponent<PlayerMovement>().SetRotation(spawnPoint.localRotation);
+
+            //StartCoroutine(EnableRotationAfterDelay(2f, player.transform));
         }
     }
 
@@ -75,7 +79,9 @@ public class SpawnManager : MonoBehaviour
             playerTransform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
             playerTransform.rotation = spawnPoint.localRotation;
 
-            //StartCoroutine(EnableRotationAfterDelay(1f, playerTransform));
+            //playerTransform.GetComponent<PlayerMovement>().SetRotation(spawnPoint.localRotation);
+
+            //StartCoroutine(EnableRotationAfterDelay(2f, playerTransform));
         }
 
         if (playerTeam == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
@@ -83,12 +89,12 @@ public class SpawnManager : MonoBehaviour
             int randomIndex = Random.Range(0, RedTeamSpawnPts.Length);
             Transform spawnPoint = RedTeamSpawnPts[randomIndex].transform;
 
-            playerTransform.GetComponent<PlayerMovement>().enabled = false;
+            //playerTransform.GetComponent<PlayerMovement>().enabled = false;
 
             playerTransform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
             playerTransform.rotation = spawnPoint.localRotation;
-
-            //StartCoroutine(EnableRotationAfterDelay(1f, playerTransform));
+            //playerTransform.GetComponent<PlayerMovement>().SetRotation(spawnPoint.localRotation);
+            //StartCoroutine(EnableRotationAfterDelay(2f, playerTransform));
         }
     }
 
@@ -96,7 +102,7 @@ public class SpawnManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        p.GetComponent<PlayerMovement>().enabled = true;
+        p.GetComponent<PlayerMovement>().ClearManualRotation();
     }
 
 

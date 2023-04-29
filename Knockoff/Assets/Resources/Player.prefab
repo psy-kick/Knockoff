@@ -1017,12 +1017,14 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  playerRotationModel: {fileID: 0}
   camTarget: {fileID: 2181353103130467121}
   TopClamp: 60
   BottomClamp: -20
   LandingAudioClip: {fileID: 0}
   FootstepAudioClips: []
   FootstepAudioVolume: 0.5
+  rotateSpeed: 5
 --- !u!114 &7014183723934615842
 MonoBehaviour:
   m_ObjectHideFlags: 0
