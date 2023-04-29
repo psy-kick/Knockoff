@@ -1019,7 +1019,7 @@ MonoBehaviour:
     m_Bits: 8
   camTarget: {fileID: 2181353103130467121}
   TopClamp: 60
-  BottomClamp: -45
+  BottomClamp: -39
   LandingAudioClip: {fileID: 0}
   FootstepAudioClips: []
   FootstepAudioVolume: 0.5
