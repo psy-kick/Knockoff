@@ -108,8 +108,7 @@ namespace KnockOff.Player
                 isSprinting = false;
 
             float speed = isSprinting ? SprintSpeed : MoveSpeed;
-            Debug.LogError(speed);
-            Debug.LogError(isGrounded);
+
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
