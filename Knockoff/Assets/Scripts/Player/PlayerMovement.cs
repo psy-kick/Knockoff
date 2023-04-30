@@ -116,7 +116,7 @@ namespace KnockOff.Player
             rb.velocity = moveDirection * speed + new Vector3(0f, rb.velocity.y, 0f);
         }
 
-
+        
         private void Update()
         {
             if (photonView.IsMine)
