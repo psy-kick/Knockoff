@@ -46,7 +46,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         ////Waiting Room
         if (PhotonNetwork.CurrentRoom.PlayerCount < maxPlayersPerRoom || PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
-            PhotonNetwork.LoadLevel("WaitingRoom");
+            PhotonNetwork.LoadLevel("CharaterSelection");
         }
     }
 

@@ -3,6 +3,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace KnockOff.Game
 {
@@ -11,13 +12,18 @@ namespace KnockOff.Game
 
         #region Public Fields
         public static GameManager instance { get; private set; }
+        public GameObject playerPrefab;
 
         [Tooltip("The prefab to use for representing the player")]
-        public GameObject playerPrefab;
         public GameObject crosshair;
 
         #endregion
 
+        #region Private Fields
+        private CharacterSelect SelectedCharacter;
+        [SerializeField]
+        private PlayerCharacters[] characterList = default;
+        #endregion
         #region Monobehaviour Callbacks
 
 
@@ -53,7 +59,8 @@ namespace KnockOff.Game
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    player = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+
+                    player = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
                 }
                 else
                 {

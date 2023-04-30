@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230c78fe5592bfd41912f52d9cb6c8c7, type: 3}
+  m_Name: YellowGuy
+  m_EditorClassIdentifier: 
+  characterName: Yellow Star
+  charaterPreviewPrefab: {fileID: 8597698371886135454, guid: 60ab07b23a75fbf458c80cba08df9edb,
+    type: 3}
+  gameCharaterPrefab: {fileID: 2808734218877236344, guid: cd9e78314cd7f4b43a9ceb316f30e260,
+    type: 3}

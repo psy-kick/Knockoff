@@ -8,16 +8,10 @@ public class RocketLauncherProjectile : Gun
 {
     private Rigidbody projectile;
     public Transform SpawnPoint;
-    public Transform camTarget;
     public LayerMask aimLayerMask;
 
     [SerializeField]
     float projectileSpeed = 10f;
-
-    private void Start()
-    {
-        camTarget = Utils.FindWithTag(PlayerManager.LocalPlayerInstance.transform, "CamTarget");
-    }
     private void Awake()
     {
         projectile = GetComponentInChildren<Rigidbody>();
