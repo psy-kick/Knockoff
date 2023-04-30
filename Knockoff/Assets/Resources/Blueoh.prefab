@@ -2693,6 +2693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemInfo: {fileID: 11400000, guid: 2fb51347f3f698b419cd3a292c0f7ad0, type: 2}
   itemPrefab: {fileID: 8127000845194134052}
+  projectilePrefab: {fileID: 4597024232796756086, guid: 1a0f7de177613a044a751321581a0845,
+    type: 3}
   SpawnPoint: {fileID: 2889302433553101324}
   aimLayerMask:
     serializedVersion: 2

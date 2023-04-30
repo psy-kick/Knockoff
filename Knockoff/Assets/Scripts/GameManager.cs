@@ -39,6 +39,7 @@ namespace KnockOff.Game
         {
             CreatePlayerPrefab(new Vector3(0f, 5f, 0f));
         }
+
         public GameObject CreatePlayerPrefab(Vector3 pos)
         {
             GameObject player = null;

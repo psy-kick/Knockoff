@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     [Tooltip("The name of the arena scene")]
-    public string arenaSceneTxt = "Room for 4";
+    public string arenaSceneTxt = "GameScene";
 
     private void Awake()
     {
