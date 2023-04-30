@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f2081faaf4e64498af52c040671563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arenaSceneTxt: blockout_level
+  arenaSceneTxt: GameScene
 --- !u!114 &5543775602866409019
 MonoBehaviour:
   m_ObjectHideFlags: 0
