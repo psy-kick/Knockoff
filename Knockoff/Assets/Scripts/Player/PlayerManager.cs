@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
+using TMPro;
 
 namespace KnockOff.Player
 {
@@ -17,21 +18,22 @@ namespace KnockOff.Player
         public static GameObject LocalPlayerInstance;
 
         public GameObject projectile;
+
         #endregion
 
         #region Private Fields
 
+        [SerializeField] private Item[] items;
+        [SerializeField] private TextMeshPro userNameTxt; 
+
         private PlayerMovement playerMovement;
-
-        [SerializeField]
-        Item[] items;
-
-        int itemIndex;
-        int previousItem = -1;
+        private int itemIndex;
+        private int previousItem = -1;
 
         #endregion
 
         public PhotonTeam playerTeam { get; private set; }
+        public string playerUsername { get; private set; }
         public bool IsFiring { get; set; }      //networked
 
         #region Monobehaviour Callbacks
@@ -84,10 +86,14 @@ namespace KnockOff.Player
             if (photonView.IsMine)
             {
                 playerTeam = team;
+                playerUsername = p.NickName;
                 Debug.LogFormat("{0}, You have been assigned to the <Color={1}><a>{1}</a></Color> team.", p.NickName, playerTeam.Name);
 
                 // Set the TagObject property to the player's GameObject
                 p.TagObject = this.gameObject;
+
+                //only show username to other players, not myself
+                photonView.RPC("SetPlayerNameForOtherPlayers", RpcTarget.Others, playerUsername, playerTeam.Name);
             }
         }
 
@@ -203,6 +209,35 @@ namespace KnockOff.Player
                 items[previousItem].itemPrefab.SetActive(false);
             }
             previousItem = itemIndex;
+        }
+
+        [PunRPC]
+        void SetPlayerNameForOtherPlayers(string playerName, string playerTeamName)
+        {
+            userNameTxt.text = playerName;
+
+            string colorString = playerTeamName;
+            Color color;
+
+            if (ColorUtility.TryParseHtmlString(GetColorString(colorString), out color))
+                userNameTxt.color = color;
+        }
+
+        // Helper function to get the color string for known color names
+        private string GetColorString(string colorName)
+        {
+            switch (colorName.ToLower())
+            {
+                case "red":
+                    return "#FF0000";
+                case "green":
+                    return "#00FF00";
+                case "blue":
+                    return "#0000FF";
+                // Add more cases for other colors as needed
+                default:
+                    return "#000000";
+            }
         }
     }
 }

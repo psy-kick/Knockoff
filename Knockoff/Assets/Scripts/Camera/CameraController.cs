@@ -52,7 +52,7 @@ namespace KnockOff.Camera
             // Set the virtual camera to follow the local player
             if (playerPhotonView != null)
             {
-                aimVirtualCam.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0);//camTarget, less expensive than findbytag                                                                                            
+                aimVirtualCam.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0).GetChild(0);//camTarget, less expensive than findbytag                                                                                            
             }
             if (Input.GetMouseButton(1))
             {
@@ -75,7 +75,7 @@ namespace KnockOff.Camera
             // Set the virtual camera to follow the local player
             if (playerPhotonView != null)
             {
-                virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0);       //camTarget, less expensive than findbytag
+                virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0).GetChild(0);       //camTarget, less expensive than findbytag
             }
         }
     }

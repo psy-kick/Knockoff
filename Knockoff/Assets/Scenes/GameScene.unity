@@ -8126,9 +8126,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 1114507905533028, guid: df0db0a4ecd9593439ec804220abfd6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638467755131174, guid: df0db0a4ecd9593439ec804220abfd6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664872540813292, guid: df0db0a4ecd9593439ec804220abfd6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1887983089748886, guid: df0db0a4ecd9593439ec804220abfd6d, type: 3}
       propertyPath: m_Name
       value: Platform_Skull_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941885084801132, guid: df0db0a4ecd9593439ec804220abfd6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961566314348402, guid: df0db0a4ecd9593439ec804220abfd6d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4267572327917380, guid: df0db0a4ecd9593439ec804220abfd6d, type: 3}
       propertyPath: m_RootOrder
@@ -24562,7 +24582,7 @@ GameObject:
   - component: {fileID: 1566432481}
   - component: {fileID: 1566432480}
   - component: {fileID: 1566432479}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25524,7 +25544,7 @@ GameObject:
   - component: {fileID: 1615530438}
   - component: {fileID: 1615530437}
   - component: {fileID: 1615530436}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26057,7 +26077,7 @@ GameObject:
   - component: {fileID: 1686728020}
   - component: {fileID: 1686728019}
   - component: {fileID: 1686728018}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27421,7 +27441,7 @@ PrefabInstance:
     - target: {fileID: 8203353526558691702, guid: 086e3f98528fb64498d7f7d540d2ce05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.553064
+      value: -4.47
       objectReference: {fileID: 0}
     - target: {fileID: 8203353526558691702, guid: 086e3f98528fb64498d7f7d540d2ce05,
         type: 3}
@@ -30740,7 +30760,7 @@ GameObject:
   - component: {fileID: 2086710004}
   - component: {fileID: 2086710003}
   - component: {fileID: 2086710002}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
