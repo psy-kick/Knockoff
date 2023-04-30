@@ -19,11 +19,6 @@ namespace KnockOff.Game
 
         #endregion
 
-        #region Private Fields
-        private CharacterSelect SelectedCharacter;
-        [SerializeField]
-        private PlayerCharacters[] characterList = default;
-        #endregion
         #region Monobehaviour Callbacks
 
 

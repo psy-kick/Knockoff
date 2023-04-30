@@ -15,5 +15,5 @@ MonoBehaviour:
   characterName: BlueOOh
   charaterPreviewPrefab: {fileID: 5535647646396653931, guid: 1dacc378b7a85e64696e56ce8d0ce8a7,
     type: 3}
-  gameCharaterPrefab: {fileID: 8909479786927311705, guid: 37cddcc935e63e94ba84c922dab3e7a6,
+  gameCharaterPrefab: {fileID: 2808734218877236344, guid: 2e8722aa1e98910458975b6d584922cd,
     type: 3}

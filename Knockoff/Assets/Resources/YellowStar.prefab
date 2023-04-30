@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 7559240364692834323}
   - component: {fileID: 8860602583715753814}
   m_Layer: 6
-  m_Name: Player
+  m_Name: YellowStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1173,7 +1173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cdd4a0e9113f9343958077a42c3f5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 9058483543567823732}
+  projectile: {fileID: 4597024232796756086, guid: 1a0f7de177613a044a751321581a0845,
+    type: 3}
   items:
   - {fileID: 1177338167390282898}
   - {fileID: 1177338167961055300}
@@ -4045,12 +4046,6 @@ GameObject:
 --- !u!4 &8574258190624270798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8574258190876428553, guid: a3a67646c0e86424e9cf13b192c81117,
-    type: 3}
-  m_PrefabInstance: {fileID: 252240071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9058483543567823732 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9058483543484404659, guid: a3a67646c0e86424e9cf13b192c81117,
     type: 3}
   m_PrefabInstance: {fileID: 252240071}
   m_PrefabAsset: {fileID: 0}

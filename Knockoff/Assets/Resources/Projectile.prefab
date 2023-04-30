@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5505904264811801807}
   - component: {fileID: 7963342010904321000}
   m_Layer: 0
-  m_Name: Muzzle
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

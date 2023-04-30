@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab:
   - {fileID: 2808734218877236344, guid: cd9e78314cd7f4b43a9ceb316f30e260, type: 3}
-  - {fileID: 8909479786927311705, guid: 37cddcc935e63e94ba84c922dab3e7a6, type: 3}
-  CharacterIndex: 0
+  - {fileID: 2808734218877236344, guid: 2e8722aa1e98910458975b6d584922cd, type: 3}
   crosshair: {fileID: 8884587818392760954, guid: 411fdf13256b47f48a76427a5b828d7e,
     type: 3}
   characterList: []
