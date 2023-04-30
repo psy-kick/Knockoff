@@ -26,6 +26,9 @@ namespace KnockOff.Player
         [Tooltip("Specify ground layer mask for detection of IsGrounded")]
         public LayerMask groundLayer;
 
+        [Tooltip("The character model of the player")]
+        public Transform characterModel;
+
         [Header("Camera Settings")]
         [Tooltip("The camera target of the player")]
         public Transform camTarget;
@@ -80,7 +83,7 @@ namespace KnockOff.Player
             float rotationAmountX = mouseX * mouseSensitivity * Time.deltaTime;
             float rotationAmountY = -mouseY * mouseSensitivity * Time.deltaTime;
 
-            transform.Rotate(Vector3.up, rotationAmountX);
+            characterModel.Rotate(Vector3.up, rotationAmountX);
 
             // Get the current rotation of the camTarget as a Quaternion
             Quaternion camTargetRotation = camTarget.rotation;
@@ -105,13 +108,15 @@ namespace KnockOff.Player
                 isSprinting = false;
 
             float speed = isSprinting ? SprintSpeed : MoveSpeed;
-
+            Debug.LogError(speed);
+            Debug.LogError(isGrounded);
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
             Vector3 movement = new Vector3(horizontal, 0.0f, vertical).normalized;
 
-            Vector3 moveDirection = transform.rotation * (Vector3.right * movement.x + Vector3.forward * movement.z);
+            Vector3 moveDirection = characterModel.TransformDirection(new Vector3(movement.x, 0f, movement.z)).normalized;
+
             // Apply the movement vector to the Rigidbody's velocity
             rb.velocity = moveDirection * speed + new Vector3(0f, rb.velocity.y, 0f);
         }
@@ -124,6 +129,9 @@ namespace KnockOff.Player
                 Look();
                 Move();
                 Jump();
+
+                RaycastHit hit;
+                isGrounded = DetectGround(out hit, 1f, groundLayer);
             }
         }
 
@@ -145,27 +153,18 @@ namespace KnockOff.Player
             canJump = true;
         }
 
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.layer == 3)
-                isGrounded = true;
-        }
-
-        private void OnCollisionStay(Collision collision)
-        {
-            if (collision.gameObject.layer == 3)
-                isGrounded = true;
-        }
-
-        private void OnCollisionExit(Collision collision)
-        {
-            if (collision.gameObject.layer == 3)
-                isGrounded = false;
-        }
-
         public void SetSensitivity(float newSensitivity)
         {
             mouseSensitivity = newSensitivity;
+        }
+
+        public bool DetectGround(out RaycastHit hit, float maxDistance = 1f, int layerMask = Physics.DefaultRaycastLayers)
+        {
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, maxDistance, layerMask))
+            {
+                return true;
+            }
+            return false;
         }
 
         /*
