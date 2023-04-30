@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: c1a754ad89791c34488c6d1904ccdfc0
   - enabled: 1
+    path: Assets/Scenes/CharaterSelection.unity
+    guid: 6afaad057200a9b4786b76a5cba61239
+  - enabled: 1
     path: Assets/Scenes/WaitingRoom.unity
     guid: c1b12b05d2e2313479ce425fd3c82157
   - enabled: 1
