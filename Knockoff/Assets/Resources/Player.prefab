@@ -1944,7 +1944,6 @@ MonoBehaviour:
   itemInfo: {fileID: 11400000, guid: 2fb51347f3f698b419cd3a292c0f7ad0, type: 2}
   itemPrefab: {fileID: 7398189212564600247}
   SpawnPoint: {fileID: 568273314813796890}
-  camTarget: {fileID: 2181353103130467121}
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 63

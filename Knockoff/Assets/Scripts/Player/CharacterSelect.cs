@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using Photon.Pun;
+using KnockOff.Game;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class CharacterSelect : MonoBehaviour
         CurrentCharaterIndex = (CurrentCharaterIndex + 1) % CharacterInstances.Count;
         CharacterInstances[CurrentCharaterIndex].SetActive(true);
         CharacterNameText.text = characterList[CurrentCharaterIndex].CharacterName;
+        PlayerPrefs.SetInt("CharacterIndex", CurrentCharaterIndex);
     }
     public void OnClickLeft()
     {
@@ -61,5 +63,6 @@ public class CharacterSelect : MonoBehaviour
         }
         CharacterInstances[CurrentCharaterIndex].SetActive(true);
         CharacterNameText.text = characterList[CurrentCharaterIndex].CharacterName;
+        PlayerPrefs.SetInt("CharacterIndex", CurrentCharaterIndex);
     }
 }
