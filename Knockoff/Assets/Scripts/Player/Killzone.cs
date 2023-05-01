@@ -9,7 +9,7 @@ public class Killzone : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == null)
+        if (other.gameObject == null && other.gameObject.tag != "Player")
             return;
 
         GameObject player = other.gameObject;

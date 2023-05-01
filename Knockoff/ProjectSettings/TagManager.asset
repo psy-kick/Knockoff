@@ -8,6 +8,7 @@ TagManager:
   - CamTarget
   - aimCam
   - 3dCam
+  - Killzone
   layers:
   - Default
   - TransparentFX

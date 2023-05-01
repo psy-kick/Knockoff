@@ -43,6 +43,7 @@ MonoBehaviour:
   - EquipItem
   - SetTeam
   - SetPlayerNameForOtherPlayers
+  - LoadLevelRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
