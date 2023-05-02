@@ -113,7 +113,6 @@ namespace KnockOff.Player
             float vertical = Input.GetAxis("Vertical");
 
             Vector3 movement = new Vector3(horizontal, 0.0f, vertical).normalized;
-
             Vector3 moveDirection = characterModel.TransformDirection(new Vector3(movement.x, 0f, movement.z)).normalized;
 
             // Apply the movement vector to the Rigidbody's velocity
@@ -125,12 +124,12 @@ namespace KnockOff.Player
         {
             if (photonView.IsMine)
             {
+                RaycastHit hit;
+                isGrounded = DetectGround(out hit, 1f, groundLayer);
+
                 Look();
                 Move();
                 Jump();
-
-                RaycastHit hit;
-                isGrounded = DetectGround(out hit, 1f, groundLayer);
             }
         }
 
@@ -159,7 +158,9 @@ namespace KnockOff.Player
 
         public bool DetectGround(out RaycastHit hit, float maxDistance = 1f, int layerMask = Physics.DefaultRaycastLayers)
         {
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, maxDistance, layerMask))
+            // Cast a ray downwards to check if the player is grounded
+            Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
+            if (Physics.Raycast(rayOrigin, Vector3.down, out hit, maxDistance, layerMask))
             {
                 return true;
             }

@@ -9,10 +9,10 @@ public class Killzone : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == null && other.gameObject.tag != "Player")
+        if (other.gameObject == null || other.transform.parent.tag != "Player")
             return;
 
-        GameObject player = other.gameObject;
+        GameObject player = other.transform.parent.gameObject;
         player.SetActive(false);
         StartCoroutine(RespawnPlayer(player));
     }
