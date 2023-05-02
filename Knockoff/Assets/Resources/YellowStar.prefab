@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
+  m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &6109814190034801708
@@ -1173,6 +1173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cdd4a0e9113f9343958077a42c3f5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localPlayer: {fileID: 0}
   projectile: {fileID: 4597024232796756086, guid: 1a0f7de177613a044a751321581a0845,
     type: 3}
   items:
@@ -2132,6 +2133,8 @@ MonoBehaviour:
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 63
+  expForce: 0
+  radius: 0
   projectileSpeed: 10
 --- !u!1 &4285230770004261243
 GameObject:

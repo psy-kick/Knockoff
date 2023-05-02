@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Unity.VisualScripting;
+using KnockOff.Player;
 
 public class RocketLauncherProjectile : Gun
 {
     [SerializeField] private GameObject projectilePrefab;
     public Transform SpawnPoint;
     public LayerMask aimLayerMask;
+
+    [SerializeField]
+    float expForce;
+    [SerializeField]
+    float radius;
 
     [SerializeField]
     float projectileSpeed = 10f;
@@ -38,5 +45,22 @@ public class RocketLauncherProjectile : Gun
     {
         yield return new WaitForSeconds(2f);
         PhotonNetwork.Destroy(p);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponentInParent<PlayerManager>() != null && collision.gameObject.GetComponentInParent<PlayerManager>().localPlayer)
+        {
+            Debug.Log("this is local");
+            return;
+        }
+        else if(collision.transform.tag == "Player")
+        {
+            KnockBackFx(collision);
+        }
+    }
+    private void KnockBackFx(Collision collision)
+    {
+        Rigidbody exPlode = collision.gameObject.GetComponentInParent<Rigidbody>();
+        exPlode.AddExplosionForce(expForce, transform.position, radius);
     }
 }
