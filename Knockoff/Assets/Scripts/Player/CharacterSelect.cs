@@ -48,6 +48,8 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
             playersDoneSelecting = (int)value;
         }
 
+        //reset back to 0
+        PlayerPrefs.SetInt("CharacterIndex", 0);
     }
 
     public void OnClickSelected(int characterIndex)
