@@ -1,7 +1,5 @@
-using KnockOff.Player;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -34,6 +32,8 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnPlayers(Photon.Realtime.Player p, PhotonTeam team)
     {
+        if (p != PhotonNetwork.LocalPlayer) return;      // exit if player is not the local player
+
         if (team == PhotonTeamsManager.Instance.GetAvailableTeams()[0])
         {
             int randomIndex = Random.Range(0, BlueTeamSpawnPts.Length);
@@ -43,8 +43,7 @@ public class SpawnManager : MonoBehaviour
             player.transform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
             player.transform.rotation = spawnPoint.localRotation;
         }
-        
-        if (team == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
+        else if (team == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
         {
             int randomIndex = Random.Range(0, RedTeamSpawnPts.Length);
             GameObject player = p.TagObject as GameObject;
@@ -65,8 +64,7 @@ public class SpawnManager : MonoBehaviour
             playerTransform.position = spawnPoint.position + spawnPoint.TransformVector(localSpawnOffset) + spawnPoint.forward * spawnForwardOffset;
             playerTransform.rotation = spawnPoint.localRotation;
         }
-
-        if (playerTeam == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
+        else if (playerTeam == PhotonTeamsManager.Instance.GetAvailableTeams()[1])
         {
             int randomIndex = Random.Range(0, RedTeamSpawnPts.Length);
             Transform spawnPoint = RedTeamSpawnPts[randomIndex].transform;
