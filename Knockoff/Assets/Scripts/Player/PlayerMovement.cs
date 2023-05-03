@@ -50,6 +50,7 @@ namespace KnockOff.Player
 
         private float mouseSensitivity;
         private Rigidbody rb;
+        private Animator anim;
         private bool canJump = true;
 
         #endregion
@@ -63,10 +64,16 @@ namespace KnockOff.Player
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            anim = GetComponent<Animator>();
 
             if (!rb)
             {
                 Debug.LogError("PlayerMovement is Missing Rigidbody Component", this);
+            }
+
+            if (!anim)
+            {
+                Debug.LogError("PlayerMovement is Missing Animator Component", this);
             }
         }
 
@@ -117,6 +124,14 @@ namespace KnockOff.Player
 
             // Apply the movement vector to the Rigidbody's velocity
             rb.velocity = moveDirection * speed + new Vector3(0f, rb.velocity.y, 0f);
+
+            anim.SetFloat("VelocityX", horizontal);
+            anim.SetFloat("VelocityZ", vertical);
+
+            if (movement != Vector3.zero)
+                anim.SetBool("isMoving", true);
+            else
+                anim.SetBool("isMoving", false);
         }
 
         
@@ -126,6 +141,7 @@ namespace KnockOff.Player
             {
                 RaycastHit hit;
                 isGrounded = DetectGround(out hit, 1f, groundLayer);
+                anim.SetBool("isGrounded", isGrounded);
 
                 Look();
                 Move();
@@ -133,7 +149,7 @@ namespace KnockOff.Player
             }
         }
 
-        public void Jump()      //need to turn it into multiple jumps with a cooldown
+        public void Jump()    
         {
             if (Input.GetKeyDown(KeyCode.Space) && canJump)
             {
@@ -141,10 +157,18 @@ namespace KnockOff.Player
                     rb.velocity = Vector3.zero;
 
                 rb.AddForce(Vector3.up * JumpImpulse, ForceMode.Impulse);
+                anim.Play("JumpOneTake");
+                anim.SetTrigger("isJumping");
+                
                 canJump = false;
-                StartCoroutine(WaitForJumpCooldown());
+
+                if (!isGrounded)
+                    StartCoroutine(WaitForJumpCooldown());
+                else
+                    canJump = true;
             }
         }
+
         private IEnumerator WaitForJumpCooldown()
         {
             yield return new WaitForSeconds(JumpCooldown);
