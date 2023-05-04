@@ -13,6 +13,8 @@ public class Killzone : MonoBehaviourPunCallbacks
             return;
 
         GameObject player = other.transform.parent.gameObject;
+        player.transform.rotation = Quaternion.identity;            //reset rotation
+        player.transform.GetChild(0).rotation = Quaternion.identity;    //reset rotation
         player.SetActive(false);
         StartCoroutine(RespawnPlayer(player));
     }
