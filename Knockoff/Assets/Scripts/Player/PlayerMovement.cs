@@ -153,7 +153,7 @@ namespace KnockOff.Player
 
         public void Jump()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 1)
             {
                 if (rb.velocity != Vector3.zero)
                     rb.velocity = Vector3.zero;
