@@ -51,7 +51,9 @@ namespace KnockOff.Player
         private float mouseSensitivity;
         private Rigidbody rb;
         private Animator anim;
-        private bool canJump = true;
+        private int jumpCount = 0;
+
+        //private bool canJump = true;
 
         #endregion
 
@@ -149,7 +151,40 @@ namespace KnockOff.Player
             }
         }
 
-        public void Jump()    
+        public void Jump()
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+            {
+                if (rb.velocity != Vector3.zero)
+                    rb.velocity = Vector3.zero;
+
+                rb.AddForce(Vector3.up * JumpImpulse, ForceMode.Impulse);
+                anim.Play("JumpOneTake");
+                anim.SetTrigger("isJumping");
+                jumpCount++;
+            }
+        }
+
+        public void SetSensitivity(float newSensitivity)
+        {
+            mouseSensitivity = newSensitivity;
+        }
+
+        public bool DetectGround(out RaycastHit hit, float maxDistance = 1f, int layerMask = Physics.DefaultRaycastLayers)
+        {
+            // Cast a ray downwards to check if the player is grounded
+            Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
+            if (Physics.Raycast(rayOrigin, Vector3.down, out hit, maxDistance, layerMask))
+            {
+                jumpCount = 0;
+                return true;
+            }
+            return false;
+        }
+
+        /*
+
+        public void JumpWithEnergy()    
         {
             if (Input.GetKeyDown(KeyCode.Space) && canJump)
             {
@@ -173,23 +208,8 @@ namespace KnockOff.Player
         {
             yield return new WaitForSeconds(JumpCooldown);
             canJump = true;
-        }
+        }*/
 
-        public void SetSensitivity(float newSensitivity)
-        {
-            mouseSensitivity = newSensitivity;
-        }
-
-        public bool DetectGround(out RaycastHit hit, float maxDistance = 1f, int layerMask = Physics.DefaultRaycastLayers)
-        {
-            // Cast a ray downwards to check if the player is grounded
-            Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
-            if (Physics.Raycast(rayOrigin, Vector3.down, out hit, maxDistance, layerMask))
-            {
-                return true;
-            }
-            return false;
-        }
 
         /*
         private void OnFootstep(AnimationEvent animationEvent)

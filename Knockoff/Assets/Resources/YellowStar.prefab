@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 8.5
   SprintSpeed: 15
-  JumpImpulse: 9
+  JumpImpulse: 11
   JumpCooldown: 1.7
   SpeedChangeRate: 10
   groundLayer:
