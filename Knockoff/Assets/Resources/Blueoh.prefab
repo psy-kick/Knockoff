@@ -1873,9 +1873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cdd4a0e9113f9343958077a42c3f5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 6233482944878613577}
-  - {fileID: 474379129595430402}
   userNameTxt: {fileID: 333030110206095113}
 --- !u!114 &2941265006322459238
 MonoBehaviour:
