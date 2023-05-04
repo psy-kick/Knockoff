@@ -48,6 +48,7 @@ namespace KnockOff.Player
 
         #region Private Fields
 
+
         private float mouseSensitivity;
         private Rigidbody rb;
         private Animator anim;
@@ -60,6 +61,7 @@ namespace KnockOff.Player
         #region Public Fields
         public bool isSprinting { get; set; }       //will be handled through stamina
         public bool isGrounded { get; set; }    //networked
+
 
         #endregion
 

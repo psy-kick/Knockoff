@@ -1038,6 +1038,7 @@ GameObject:
   - component: {fileID: 1620999953981835338}
   - component: {fileID: 6109814190034801708}
   - component: {fileID: 2941265006322459238}
+  - component: {fileID: 1580496316617879084}
   - component: {fileID: 7014183723934615842}
   - component: {fileID: 7559240364692834323}
   - component: {fileID: 8860602583715753814}
@@ -1172,8 +1173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cdd4a0e9113f9343958077a42c3f5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 4597024232796756086, guid: 1a0f7de177613a044a751321581a0845,
-    type: 3}
   items:
   - {fileID: 1177338167390282898}
   - {fileID: 1177338167961055300}
@@ -1205,6 +1204,21 @@ MonoBehaviour:
   LandingAudioClip: {fileID: 0}
   FootstepAudioClips: []
   FootstepAudioVolume: 0.5
+--- !u!114 &1580496316617879084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2808734218877236344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdc327bdfc9047469257d3dc1b5dae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1177338167390282898}
+  - {fileID: 1177338167961055300}
 --- !u!114 &7014183723934615842
 MonoBehaviour:
   m_ObjectHideFlags: 0
