@@ -35,7 +35,7 @@ public class RocketLauncherProjectile : Gun
 
     private IEnumerator WaitForBullet(GameObject p)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         PhotonNetwork.Destroy(p);
     }
 }
