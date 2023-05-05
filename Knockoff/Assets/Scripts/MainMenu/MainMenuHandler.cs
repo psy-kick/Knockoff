@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class MainMenuHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     #region Button References
     public void play()
     {
-        SceneManager.LoadScene("Launcher");
+        if (PhotonNetwork.IsConnected)
+        {
+            Debug.Log("its connected");
+            PhotonNetwork.LoadLevel("Lobby");
+        }
+        else
+        {
+            Debug.Log("its Dconnected");
+            PhotonNetwork.LoadLevel("Launcher");
+        }
     }
     public void Options()
     {
