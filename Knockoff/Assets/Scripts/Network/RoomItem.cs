@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class RoomItem : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class RoomItem : MonoBehaviour
     }
     public void SetRoomName(string _roomName)
     {
-        roomName.text= _roomName;
+        roomName.text= "Room " + _roomName;
     }
     public void OnClickRoom()
     {
