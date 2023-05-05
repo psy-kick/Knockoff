@@ -2712,7 +2712,7 @@ MonoBehaviour:
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 95
-  projectileSpeed: 10
+  projectileSpeed: 25
 --- !u!1 &5174597791818867071
 GameObject:
   m_ObjectHideFlags: 0
