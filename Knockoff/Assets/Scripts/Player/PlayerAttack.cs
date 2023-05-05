@@ -93,5 +93,6 @@ namespace KnockOff.Player
 
             items[index].gameObject.SetActive(true);
         }
+
     }
 }

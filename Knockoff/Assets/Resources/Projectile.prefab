@@ -138,7 +138,9 @@ MonoBehaviour:
   SpawnPoint: {fileID: 0}
   aimLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  expForce: 800
+  radius: 2
   projectileSpeed: 10
 --- !u!114 &8281904484034408559
 MonoBehaviour:
@@ -193,6 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
+  m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3

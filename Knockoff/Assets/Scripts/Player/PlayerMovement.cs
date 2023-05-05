@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using ExitGames.Client.Photon;
+using Photon.Realtime;
 
 namespace KnockOff.Player
 {
-    public class PlayerMovement : MonoBehaviourPunCallbacks
+    public class PlayerMovement : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         [Header("Player Settings")]
         [Tooltip("Move speed of the character in m/s")]
@@ -84,6 +86,34 @@ namespace KnockOff.Player
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
+            PhotonNetwork.AddCallbackTarget(this);
+
+            // Call the Register method of the KnockOffEvent struct to register the custom type
+            KnockOffEvent.Register();
+        }
+
+        private void OnDestroy()
+        {
+            PhotonNetwork.RemoveCallbackTarget(this);
+        }
+
+        public void OnEvent(EventData photonEvent)
+        {
+            if (photonEvent.Code == 1 && photonEvent.CustomData != null)
+            {
+                var eventData = (KnockOffEvent)photonEvent.CustomData;
+                Debug.LogError(eventData.playerId + " RECEIVING");
+                // Get the PhotonView of the player that collided with the projectile
+                PhotonView pv = PhotonView.Find(eventData.playerId);
+                Debug.LogError(pv);
+                // Check if the PhotonView belongs to a player and it's not the local player
+                if (pv != null && !pv.IsMine)
+                {
+                    // Apply knock off effect
+                    pv.GetComponent<PlayerMovement>().ApplyKnockOff(eventData.expForce, eventData.radius);
+                    Debug.LogError("KNIOCOCOCOCOC");
+                }
+            }
         }
 
         public void Look()
@@ -183,6 +213,13 @@ namespace KnockOff.Player
             }
             return false;
         }
+
+
+        public void ApplyKnockOff(float expForce, float radius)
+        {
+            rb.AddExplosionForce(expForce, transform.position, radius);
+        }
+
 
         /*
 

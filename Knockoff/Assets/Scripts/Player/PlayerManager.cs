@@ -16,6 +16,9 @@ namespace KnockOff.Player
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
+        [HideInInspector]
+        public PlayerManager localPlayer;
+
         #endregion
 
         #region Private Fields
@@ -39,6 +42,7 @@ namespace KnockOff.Player
             if (photonView.IsMine)
             {
                 PlayerManager.LocalPlayerInstance = this.gameObject;
+                localPlayer = this;
             }
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.

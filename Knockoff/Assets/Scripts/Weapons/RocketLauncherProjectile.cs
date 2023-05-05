@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using KnockOff.Player;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 public class RocketLauncherProjectile : Gun
 {
@@ -9,8 +12,13 @@ public class RocketLauncherProjectile : Gun
     public Transform SpawnPoint;
     public LayerMask aimLayerMask;
 
+    [SerializeField] float expForce = 800f;
+    [SerializeField] float radius = 2f;
+
     [SerializeField]
     float projectileSpeed = 10f;
+
+    private byte knockOffEventCode = 1;
 
     public override void Use()
     {
@@ -39,4 +47,38 @@ public class RocketLauncherProjectile : Gun
         yield return new WaitForSeconds(2f);
         PhotonNetwork.Destroy(p);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        /*
+        if (collision.gameObject.GetComponentInParent<PlayerManager>() != null && collision.gameObject.GetComponentInParent<PlayerManager>().localPlayer)
+        {
+            Debug.Log("this is local");
+            return;
+        }
+        else if (collision.transform.tag == "Player")
+        {
+            KnockBackFx(collision);
+        }
+        */
+        if (collision.gameObject.GetComponentInParent<PlayerManager>() != null && collision.gameObject.GetComponentInParent<PlayerManager>().localPlayer)
+        {
+            Debug.Log("this is local");
+            return;
+        }
+        else if (collision.transform.tag == "Player")
+        {
+            int playerId = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
+            Debug.LogError(playerId + " SENDING");
+            KnockOffEvent knockOffEvent = new KnockOffEvent(playerId, expForce, radius);
+            PhotonNetwork.RaiseEvent(knockOffEventCode, knockOffEvent, new RaiseEventOptions { Receivers = ReceiverGroup.All }, new SendOptions { Reliability = true });
+        }
+    }
+    private void KnockBackFx(Collision collision)
+    {
+        Rigidbody exPlode = collision.gameObject.GetComponentInParent<Rigidbody>();
+        exPlode.AddExplosionForce(expForce, transform.position, radius);
+    }
+
+
 }
