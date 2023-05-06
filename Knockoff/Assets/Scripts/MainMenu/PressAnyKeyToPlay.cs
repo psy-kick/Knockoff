@@ -5,17 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PressAnyKeyToPlay : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private AudioSource buttonSound;
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.anyKeyDown)
         {
+            buttonSound.Play(); 
             Invoke("LoadScene", 0.5f);
         }
     }
