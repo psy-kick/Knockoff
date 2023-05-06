@@ -2012,19 +2012,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7523223365090020968, guid: 4c62294b1cd99104eb38835a2e7f084a,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1411338853}
-    - target: {fileID: 7523223365090020968, guid: 4c62294b1cd99104eb38835a2e7f084a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Back
-      objectReference: {fileID: 0}
-    - target: {fileID: 7523223365090020968, guid: 4c62294b1cd99104eb38835a2e7f084a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SettingsHandler, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7523223365090020974, guid: 4c62294b1cd99104eb38835a2e7f084a,
         type: 3}
       propertyPath: m_Name

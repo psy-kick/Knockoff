@@ -37,6 +37,7 @@ namespace KnockOff.Game
         private void Start()
         {
             CreatePlayerPrefab(new Vector3(0f, 5f, 0f));
+            AudioManager.instance.ChangeToGameplayMusic();
         }
 
         public GameObject CreatePlayerPrefab(Vector3 pos)

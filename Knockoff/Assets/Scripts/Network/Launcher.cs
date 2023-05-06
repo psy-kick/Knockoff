@@ -33,6 +33,7 @@ namespace KnockOff.Launcher
         /// </summary>
         bool isConnecting;
 
+        [SerializeField] private AudioSource buttonSound;
 
         #endregion
 
@@ -88,6 +89,13 @@ namespace KnockOff.Launcher
 
 
         #region Public Methods
+
+        public void Connect()
+        {
+            buttonSound.Play();
+            Invoke("OnConnectClicked", 0.5f);
+        }
+
         public void OnConnectClicked()
         {
             PhotonNetwork.ConnectUsingSettings();
