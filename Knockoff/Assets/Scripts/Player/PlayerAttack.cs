@@ -14,6 +14,15 @@ namespace KnockOff.Player
         private float lastSwitchTime = 0f;
         private float switchDelay = 0.25f; // set the delay time to half a second
 
+        private Animator anim;
+        private void Awake()
+        {
+            anim = GetComponent<Animator>();
+            if (!anim)
+            {
+                Debug.LogError("PlayerMovement is Missing Animator Component", this);
+            }
+        }
         private void Start()
         {
             EquipItem(0);
@@ -34,6 +43,7 @@ namespace KnockOff.Player
             {
                 if (!IsFiring)
                 {
+                    anim.SetBool("isFiring", true);
                     items[itemIndex].Use();
                     IsFiring = true;
                 }
@@ -42,6 +52,7 @@ namespace KnockOff.Player
             {
                 if (IsFiring)
                 {
+                    anim.SetBool("isFiring", false);
                     IsFiring = false;
                 }
             }
