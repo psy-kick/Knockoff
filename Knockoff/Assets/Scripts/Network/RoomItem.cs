@@ -13,7 +13,7 @@ public class RoomItem : MonoBehaviour
     }
     public void SetRoomName(string _roomName)
     {
-        roomName.text= "Room " + _roomName;
+        roomName.text= _roomName;
     }
     public void OnClickRoom()
     {
