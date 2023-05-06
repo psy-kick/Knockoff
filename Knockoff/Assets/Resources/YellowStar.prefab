@@ -1748,6 +1748,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: isGrounded
+  - Type: 4
+    SynchronizeType: 0
+    Name: isFiring
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
@@ -2716,6 +2719,7 @@ Transform:
   - {fileID: 4793077955700615006}
   - {fileID: 2910822477122890930}
   - {fileID: 6370664242717744758}
+  - {fileID: 3344743851804942696}
   m_Father: {fileID: 1908269039733980786}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3886,7 +3890,6 @@ Transform:
   - {fileID: 2181353103130467121}
   - {fileID: 5319120451304154572}
   - {fileID: 1735062672210509924}
-  - {fileID: 3344743851804942696}
   m_Father: {fileID: 2808734218877593688}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4596,16 +4599,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7914840014951560270}
-  m_LocalRotation: {x: 0.00261116, y: -0.000000695423, z: 0.000000695423, w: 0.99999666}
-  m_LocalPosition: {x: 1.2670199, y: 0.95034754, z: 0}
+  m_LocalRotation: {x: 0.0015162517, y: 0.7510518, z: -0.00028964857, w: 0.66024154}
+  m_LocalPosition: {x: 1.27, y: 0.23, z: -0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6201282207570949529}
   - {fileID: 1246927534513851987}
-  m_Father: {fileID: 352763712310820981}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1242726332054917651}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0.14, y: 97.363, z: 0.109}
 --- !u!1 &7994357635277837262
 GameObject:
   m_ObjectHideFlags: 0
