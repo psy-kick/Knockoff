@@ -259,8 +259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9e6f53b8a2a9cf546add1da9020e9c3c, type: 2}
-  m_sharedMaterial: {fileID: 5857884438039311726, guid: 9e6f53b8a2a9cf546add1da9020e9c3c,
+  m_fontAsset: {fileID: 11400000, guid: 885d9594d2d0a66438f9de68f0944d11, type: 2}
+  m_sharedMaterial: {fileID: 2397130980693899107, guid: 885d9594d2d0a66438f9de68f0944d11,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1030,8 +1030,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Full screen
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9e6f53b8a2a9cf546add1da9020e9c3c, type: 2}
-  m_sharedMaterial: {fileID: 5857884438039311726, guid: 9e6f53b8a2a9cf546add1da9020e9c3c,
+  m_fontAsset: {fileID: 11400000, guid: 885d9594d2d0a66438f9de68f0944d11, type: 2}
+  m_sharedMaterial: {fileID: 2397130980693899107, guid: 885d9594d2d0a66438f9de68f0944d11,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1282,8 +1282,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1394,8 +1394,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9e6f53b8a2a9cf546add1da9020e9c3c, type: 2}
-  m_sharedMaterial: {fileID: 5857884438039311726, guid: 9e6f53b8a2a9cf546add1da9020e9c3c,
+  m_fontAsset: {fileID: 11400000, guid: 885d9594d2d0a66438f9de68f0944d11, type: 2}
+  m_sharedMaterial: {fileID: 2397130980693899107, guid: 885d9594d2d0a66438f9de68f0944d11,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2012,19 +2012,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7523223365090020968, guid: 4c62294b1cd99104eb38835a2e7f084a,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1411338853}
-    - target: {fileID: 7523223365090020968, guid: 4c62294b1cd99104eb38835a2e7f084a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Back
-      objectReference: {fileID: 0}
-    - target: {fileID: 7523223365090020968, guid: 4c62294b1cd99104eb38835a2e7f084a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SettingsHandler, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7523223365090020974, guid: 4c62294b1cd99104eb38835a2e7f084a,
         type: 3}
       propertyPath: m_Name
@@ -2332,8 +2322,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9e6f53b8a2a9cf546add1da9020e9c3c, type: 2}
-  m_sharedMaterial: {fileID: 5857884438039311726, guid: 9e6f53b8a2a9cf546add1da9020e9c3c,
+  m_fontAsset: {fileID: 11400000, guid: 885d9594d2d0a66438f9de68f0944d11, type: 2}
+  m_sharedMaterial: {fileID: 2397130980693899107, guid: 885d9594d2d0a66438f9de68f0944d11,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3249,11 +3239,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 25
   m_fontSizeBase: 14
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 25
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1

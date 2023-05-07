@@ -22,6 +22,8 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
     [HideInInspector]
     public GameObject CharacterSelected;
 
+    [SerializeField] private AudioSource buttonSound;
+
     private int playersDoneSelecting = 0;
 
     // Start is called before the first frame update
@@ -54,6 +56,7 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
 
     public void OnClickSelected(int characterIndex)
     {
+        buttonSound.Play();
         CharacterSelected = characterList[characterIndex].GameCharaterPrefab;
 
         // Get the current value of the custom room property
@@ -76,7 +79,7 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsMasterClient)
             {
                 // Load the waiting room scene
-                PhotonNetwork.LoadLevel("WaitingRoom");
+                Invoke("WaitForPhotonSceneLoad", 0.5f);
             }
             else
             {
@@ -86,13 +89,19 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
         }
     }
 
+    public void WaitForPhotonSceneLoad()
+    {
+        // Load the waiting room scene
+        PhotonNetwork.LoadLevel("WaitingRoom");
+    }
+
     [PunRPC]
     void LoadLevelRPC(string levelName)
     {
         // The master client loads the specified level
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.LoadLevel(levelName);
+            Invoke("WaitForPhotonSceneLoad", 0.5f);
         }
     }
 
