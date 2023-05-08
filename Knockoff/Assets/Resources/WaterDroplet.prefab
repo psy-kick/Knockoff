@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 2140351781367905709}
   - component: {fileID: -8185068111092125452}
   - component: {fileID: -5698831521472119901}
-  - component: {fileID: -3034506123132864714}
+  - component: {fileID: -5914749013323381130}
   - component: {fileID: 8609382140174309214}
   - component: {fileID: 531529195257036850}
-  - component: {fileID: -5914749013323381130}
+  - component: {fileID: -3034506123132864714}
   m_Layer: 0
   m_Name: WaterDroplet
   m_TagString: Untagged
@@ -129,22 +129,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &-3034506123132864714
-MonoBehaviour:
+--- !u!64 &-5914749013323381130
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483278150367796344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6691830845f83248a7146760ea7b8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expForce: 50
-  radius: 2
-  HitAudio: {fileID: 1725876188417502251, guid: e9b1e983adf8a274daa923b917ef0549,
-    type: 3}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7903587362807300070, guid: f4c75b7f35c9f4644949975da32a4694, type: 3}
 --- !u!114 &8609382140174309214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,17 +175,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!64 &-5914749013323381130
-MeshCollider:
+--- !u!114 &-3034506123132864714
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483278150367796344}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7903587362807300070, guid: f4c75b7f35c9f4644949975da32a4694, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6691830845f83248a7146760ea7b8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expForce: 350
+  HitAudio: {fileID: 1725876188417502251, guid: e9b1e983adf8a274daa923b917ef0549,
+    type: 3}

@@ -35,7 +35,7 @@ public class WaterGun : Gun
             Vector3 aimDir = (mouseWorldPos - SpawnPoint.position).normalized;
             GameObject _projectile = PhotonNetwork.Instantiate(WaterprojectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
             _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
-            _projectile.GetComponent<Projectile>().playerOwner = playerOwner.Owner;
+            _projectile.GetComponent<WaterProjectile>().playerOwner = playerOwner.Owner;
 
             StartCoroutine(WaitForBullet(_projectile));
         }
