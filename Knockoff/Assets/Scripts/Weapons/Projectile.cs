@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviourPunCallbacks
     [SerializeField] Transform HitAudio;
 
     private PlayerMovement playerMovement;
+    public Photon.Realtime.Player playerOwner { get; set; }
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -27,7 +29,7 @@ public class Projectile : MonoBehaviourPunCallbacks
         {
             int targetPlayerID = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
             Vector3 contactPoint = collision.contacts[0].point;
-            photonView.RPC("KnockBackPlayer", RpcTarget.All, playerId, expForce, radius, contactPoint);
+            photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, radius, contactPoint); ;
             Instantiate(HitAudio, transform.position, Quaternion.identity);
         }
     }
