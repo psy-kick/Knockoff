@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviourPunCallbacks
         }
         else if (collision.transform.tag == "Player")
         {
-            int playerId = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
+            int targetPlayerID = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
             Vector3 contactPoint = collision.contacts[0].point;
             photonView.RPC("KnockBackPlayer", RpcTarget.All, playerId, expForce, radius, contactPoint);
             Instantiate(HitAudio, transform.position, Quaternion.identity);
@@ -33,14 +33,15 @@ public class Projectile : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    private void KnockBackPlayer(int playerId, float expForce, float radius, Vector3 contactPoint)
+    private void KnockBackPlayer(int targetPlayerID, Photon.Realtime.Player attackingPlayer , float expForce, float radius, Vector3 contactPoint)
     {
-        PhotonView pv = PhotonView.Find(playerId);
+        PhotonView pv = PhotonView.Find(targetPlayerID);
 
         if (pv.IsMine)
         {
             Rigidbody exPlode = pv.GetComponent<Rigidbody>();
-;           Vector3 knockbackDir = (photonView.transform.position - contactPoint).normalized;
+            pv.GetComponent<PlayerRespawn>().Opponent = attackingPlayer;
+            Vector3 knockbackDir = (photonView.transform.position - contactPoint).normalized;
             exPlode.AddForceAtPosition(-knockbackDir * expForce, contactPoint, ForceMode.Impulse);
             playerMovement.anim.SetBool("GotHit", true);
         }

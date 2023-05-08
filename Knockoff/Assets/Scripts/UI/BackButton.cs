@@ -6,8 +6,10 @@ using Photon.Pun;
 
 public class BackButton : MonoBehaviour
 {
+    [SerializeField] private string sceneName;
+
     public void OnclickBack()
     {
-        PhotonNetwork.LoadLevel("MainMenu");
+        SceneManager.LoadScene(sceneName);
     }
 }

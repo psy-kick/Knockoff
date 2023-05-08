@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 7110802521407468882}
   - component: {fileID: 7110802521407468883}
   m_Layer: 5
-  m_Name: inGameUI
+  m_Name: inGameUIPrototype
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

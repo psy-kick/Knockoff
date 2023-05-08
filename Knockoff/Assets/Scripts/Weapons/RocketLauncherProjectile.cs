@@ -30,6 +30,7 @@ public class RocketLauncherProjectile : Gun
             Vector3 aimDir = (mouseWorldPos - SpawnPoint.position).normalized;
             GameObject _projectile = PhotonNetwork.Instantiate(projectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir,Vector3.up));
             _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
+            _projectile.GetComponent<Projectile>().playerOwner = PhotonNetwork.LocalPlayer;
 
             StartCoroutine(WaitForBullet(_projectile));
         }

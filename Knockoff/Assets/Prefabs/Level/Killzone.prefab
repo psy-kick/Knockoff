@@ -58,4 +58,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda1785fd88b8d649923b75bb8385454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnCooldown: 3
+  respawnCooldown: 5

@@ -1,5 +1,6 @@
 using KnockOff.Player;
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class PlayerRespawn : MonoBehaviourPunCallbacks
 {
     private PlayerManager playerManager;
+    public Photon.Realtime.Player Opponent { get; set; }
 
     private void Start()
     {
@@ -26,5 +28,6 @@ public class PlayerRespawn : MonoBehaviourPunCallbacks
         SpawnManager.respawnPlayer?.Invoke(transform, playerManager.playerTeam);
 
         //update scoring system (give point to opposing team)
+        ScoreManager.instance.UpdateTeamScore(Opponent.GetPhotonTeam().Code, 1);
     }
 }
