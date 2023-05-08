@@ -8,9 +8,11 @@ public class RocketLauncherProjectile : Gun
     [SerializeField] private GameObject projectilePrefab;
     public Transform SpawnPoint;
     public LayerMask aimLayerMask;
+    [SerializeField] Transform HitVfxText;
+    [SerializeField] Transform HitVfx;
+    [SerializeField] Transform HitSound;
 
     [SerializeField] float projectileSpeed = 10f;
-
     public override void Use()
     {
         Shoot();
@@ -35,7 +37,10 @@ public class RocketLauncherProjectile : Gun
 
     private IEnumerator WaitForBullet(GameObject p)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(HitSound, p.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(HitVfx.name, p.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
         PhotonNetwork.Destroy(p);
     }
 }

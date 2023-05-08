@@ -11,6 +11,9 @@ public class WaterGun : Gun
     public LayerMask aimLayerMask;
 
     [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] Transform HitVfxText;
+    [SerializeField] Transform HitVfx;
+    [SerializeField] Transform HitSound;
 
     public override void Use()
     {
@@ -36,7 +39,10 @@ public class WaterGun : Gun
 
     private IEnumerator WaitForBullet(GameObject p)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(HitSound, p.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(HitVfx.name, p.transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
         PhotonNetwork.Destroy(p);
     }
 }
