@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviourPunCallbacks
 {
     [SerializeField] float expForce = 100f;
     [SerializeField] float radius = 2f;
+    [SerializeField] Transform HitAudio;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,6 +22,7 @@ public class Projectile : MonoBehaviourPunCallbacks
             int playerId = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
             Vector3 contactPoint = collision.contacts[0].point;
             photonView.RPC("KnockBackPlayer", RpcTarget.All, playerId, expForce, radius, contactPoint);
+            Instantiate(HitAudio, transform.position, Quaternion.identity);
         }
     }
 
@@ -32,7 +34,7 @@ public class Projectile : MonoBehaviourPunCallbacks
         if (pv.IsMine)
         {
             Rigidbody exPlode = pv.GetComponent<Rigidbody>();
-            Vector3 knockbackDir = (photonView.transform.position - contactPoint).normalized;
+;           Vector3 knockbackDir = (photonView.transform.position - contactPoint).normalized;
             exPlode.AddForceAtPosition(-knockbackDir * expForce, contactPoint, ForceMode.Impulse);
         }
     }

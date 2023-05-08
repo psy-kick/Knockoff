@@ -8,6 +8,7 @@ public class WaterProjectile : MonoBehaviourPunCallbacks
 {
     [SerializeField] float expForce = 50f;
     [SerializeField] float radius = 2f;
+    [SerializeField] Transform HitAudio;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,6 +22,7 @@ public class WaterProjectile : MonoBehaviourPunCallbacks
             int playerId = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
             Vector3 contactPoint = collision.contacts[0].point;
             photonView.RPC("WaterKnockBackPlayer", RpcTarget.All, playerId, expForce, radius, contactPoint);
+            Instantiate(HitAudio, transform.position, Quaternion.identity);
         }
     }
 

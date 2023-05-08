@@ -2861,7 +2861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6605112388901736507
 Transform:
   m_ObjectHideFlags: 0
@@ -2938,6 +2938,11 @@ MonoBehaviour:
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 95
+  HitVfxText: {fileID: 5339739117810204697, guid: 26e1cb216e3635e4a820f58a1118d6b9,
+    type: 3}
+  HitVfx: {fileID: 2433282508538045228, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
+  HitSound: {fileID: 3438056045870751829, guid: a2da5b06c58db484fa400b041d17ad27,
+    type: 3}
   projectileSpeed: 25
 --- !u!1 &5174597791818867071
 GameObject:
@@ -3434,7 +3439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7909527627064118302
 Transform:
   m_ObjectHideFlags: 0
@@ -3513,6 +3518,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 95
   projectileSpeed: 10
+  HitVfxText: {fileID: 5521348480582962083, guid: 019faff12646bd8438ea56e8e7861fd8,
+    type: 3}
+  HitVfx: {fileID: 8620588918006998812, guid: 7f906c77905876d488e88e99d13c3d7d, type: 3}
+  HitSound: {fileID: 2553173985835571490, guid: dc0e6cc636f6d0c4d88008004b736dea,
+    type: 3}
 --- !u!1 &5544157781535587888
 GameObject:
   m_ObjectHideFlags: 0
