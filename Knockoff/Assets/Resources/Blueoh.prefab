@@ -1980,6 +1980,12 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: isGrounded
+  - Type: 4
+    SynchronizeType: 1
+    Name: isFiring
+  - Type: 4
+    SynchronizeType: 1
+    Name: GotHit
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
@@ -2942,6 +2948,7 @@ MonoBehaviour:
   HitSound: {fileID: 3438056045870751829, guid: a2da5b06c58db484fa400b041d17ad27,
     type: 3}
   projectileSpeed: 25
+  playerOwner: {fileID: 582522939827153177}
 --- !u!1 &5174597791818867071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,6 +3528,7 @@ MonoBehaviour:
   HitVfx: {fileID: 8620588918006998812, guid: 7f906c77905876d488e88e99d13c3d7d, type: 3}
   HitSound: {fileID: 2553173985835571490, guid: dc0e6cc636f6d0c4d88008004b736dea,
     type: 3}
+  playerOwner: {fileID: 582522939827153177}
 --- !u!1 &5544157781535587888
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,9 @@ public class RocketLauncherProjectile : Gun
     [SerializeField] Transform HitSound;
 
     [SerializeField] float projectileSpeed = 10f;
+
+    [Header("Player")]
+    [SerializeField] private PhotonView playerOwner;
     public override void Use()
     {
         Shoot();
@@ -30,7 +33,7 @@ public class RocketLauncherProjectile : Gun
             Vector3 aimDir = (mouseWorldPos - SpawnPoint.position).normalized;
             GameObject _projectile = PhotonNetwork.Instantiate(projectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir,Vector3.up));
             _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
-            _projectile.GetComponent<Projectile>().playerOwner = PhotonNetwork.LocalPlayer;
+            _projectile.GetComponent<Projectile>().playerOwner = playerOwner.Owner;
 
             StartCoroutine(WaitForBullet(_projectile));
         }
@@ -44,4 +47,5 @@ public class RocketLauncherProjectile : Gun
         PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
         PhotonNetwork.Destroy(p);
     }
+
 }

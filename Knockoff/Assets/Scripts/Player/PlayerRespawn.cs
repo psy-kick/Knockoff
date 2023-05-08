@@ -27,7 +27,11 @@ public class PlayerRespawn : MonoBehaviourPunCallbacks
 
         SpawnManager.respawnPlayer?.Invoke(transform, playerManager.playerTeam);
 
-        //update scoring system (give point to opposing team)
-        ScoreManager.instance.UpdateTeamScore(Opponent.GetPhotonTeam().Code, 1);
+        if (Opponent != null)
+        {
+            //update scoring system (give point to opposing team)
+            ScoreManager.instance.UpdateTeamScore(Opponent.GetPhotonTeam().Code, 1);
+            Opponent = null;
+        }
     }
 }

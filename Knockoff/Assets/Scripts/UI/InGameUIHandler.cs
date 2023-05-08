@@ -10,8 +10,9 @@ public class InGameUIHandler : MonoBehaviourPunCallbacks
     [SerializeField] private TextMeshProUGUI team1ScoreTxt;
     [SerializeField] private TextMeshProUGUI team2ScoreTxt;
 
-    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
+    public void UpdateScoresUI()
     {
+        Debug.LogError("UPDATE SCORE");
         // Update team scores displayed in the game UI
         team1ScoreTxt.text = ScoreManager.instance.team1Score.ToString();
         team2ScoreTxt.text = ScoreManager.instance.team2Score.ToString();

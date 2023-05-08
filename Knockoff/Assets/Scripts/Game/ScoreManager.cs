@@ -8,11 +8,10 @@ public class ScoreManager : MonoBehaviourPunCallbacks
 {
     public static ScoreManager instance { get; private set; }
 
-    private const string TEAM_1_SCORE_PROPERTY_NAME = "Team1Score";
-    private const string TEAM_2_SCORE_PROPERTY_NAME = "Team2Score";
-
     public int team1Score { get; private set; }
     public int team2Score { get; private set; }
+
+    private InGameUIHandler InGameUIHandler;
 
     private void Awake()
     {
@@ -21,11 +20,8 @@ public class ScoreManager : MonoBehaviourPunCallbacks
             instance = this;
             //DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
 
+        InGameUIHandler = FindObjectOfType<InGameUIHandler>();
     }
 
     private void Start()
@@ -34,9 +30,8 @@ public class ScoreManager : MonoBehaviourPunCallbacks
         team1Score = 0;
         team2Score = 0;
 
-        // Set initial room properties for team scores
-        ExitGames.Client.Photon.Hashtable initialProps = new ExitGames.Client.Photon.Hashtable() { { TEAM_1_SCORE_PROPERTY_NAME, team1Score }, { TEAM_2_SCORE_PROPERTY_NAME, team2Score } };
-        PhotonNetwork.CurrentRoom.SetCustomProperties(initialProps);
+        // Update the scores across all clients
+        photonView.RPC("UpdateScores", RpcTarget.All, team1Score, team2Score);
     }
 
 
@@ -45,15 +40,14 @@ public class ScoreManager : MonoBehaviourPunCallbacks
         if (teamNumber == PhotonTeamsManager.Instance.GetAvailableTeams()[0].Code)
         {
             team1Score += scoreChange;
-            ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable() { { TEAM_1_SCORE_PROPERTY_NAME, team1Score } };
-            PhotonNetwork.CurrentRoom.SetCustomProperties(props);
         }
         else if (teamNumber == PhotonTeamsManager.Instance.GetAvailableTeams()[1].Code)
         {
             team2Score += scoreChange;
-            ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable() { { TEAM_2_SCORE_PROPERTY_NAME, team2Score } };
-            PhotonNetwork.CurrentRoom.SetCustomProperties(props);
         }
+
+        // Update the scores across all clients
+        photonView.RPC("UpdateScores", RpcTarget.All, team1Score, team2Score);
 
         //if we wanted to add more teams
         /*
@@ -67,17 +61,15 @@ public class ScoreManager : MonoBehaviourPunCallbacks
     }
 
 
-    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
+    [PunRPC]
+    private void UpdateScores(int team1Score, int team2Score)
     {
-        if (propertiesThatChanged.ContainsKey(TEAM_1_SCORE_PROPERTY_NAME))
-        {
-            team1Score = (int)propertiesThatChanged[TEAM_1_SCORE_PROPERTY_NAME];
-        }
+        this.team1Score = team1Score;
+        this.team2Score = team2Score;
 
-        if (propertiesThatChanged.ContainsKey(TEAM_2_SCORE_PROPERTY_NAME))
-        {
-            team2Score = (int)propertiesThatChanged[TEAM_2_SCORE_PROPERTY_NAME];
-        }
+        //call ui
+        InGameUIHandler.UpdateScoresUI();
     }
+
 
 }

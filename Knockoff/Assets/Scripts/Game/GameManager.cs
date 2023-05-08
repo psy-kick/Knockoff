@@ -30,7 +30,7 @@ namespace KnockOff.Game
             }
             else
             {
-                Destroy(instance);
+                Destroy(gameObject);
             }
         }
 
