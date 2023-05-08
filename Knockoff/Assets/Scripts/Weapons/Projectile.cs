@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using KnockOff.Player;
+using Photon.Pun.UtilityScripts;
 
 public class Projectile : MonoBehaviourPunCallbacks
 {
@@ -21,11 +22,15 @@ public class Projectile : MonoBehaviourPunCallbacks
         else if (collision.transform.tag == "Player")
         {
             int targetPlayerID = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
-            Vector3 contactPoint = collision.contacts[0].point;
-            Instantiate(HitAudio, transform.position, Quaternion.identity);
-            photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, radius, contactPoint);
+            if (!IsFriendlyFire(targetPlayerID))
+            {
+                Vector3 contactPoint = collision.contacts[0].point;
+                Instantiate(HitAudio, transform.position, Quaternion.identity);
+                photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, radius, contactPoint);
+            }
         }
     }
+
 
     [PunRPC]
     private void KnockBackPlayer(int targetPlayerID, Photon.Realtime.Player attackingPlayer , float expForce, float radius, Vector3 contactPoint)
@@ -38,7 +43,17 @@ public class Projectile : MonoBehaviourPunCallbacks
             pv.GetComponent<PlayerRespawn>().Opponent = attackingPlayer;
             Vector3 knockbackDir = (photonView.transform.position - contactPoint).normalized;
             exPlode.AddForceAtPosition(-knockbackDir * expForce, contactPoint, ForceMode.Impulse);
-            //pv.GetComponent<PlayerMovement>().anim.SetBool("GotHit", true);
+            pv.GetComponent<PlayerMovement>().anim.SetTrigger("GotHit");
         }
+    }
+
+    private bool IsFriendlyFire(int targetPlayerID)
+    {
+        PhotonView pv = PhotonView.Find(targetPlayerID);
+
+        if (photonView.Owner.GetPhotonTeam() == pv.Owner.GetPhotonTeam())
+            return true;
+
+        return false;
     }
 }

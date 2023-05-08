@@ -12,7 +12,7 @@ public class InGameUIHandler : MonoBehaviourPunCallbacks
 
     public void UpdateScoresUI()
     {
-        Debug.LogError("UPDATE SCORE");
+        Debug.Log("UPDATE SCORE");
         // Update team scores displayed in the game UI
         team1ScoreTxt.text = ScoreManager.instance.team1Score.ToString();
         team2ScoreTxt.text = ScoreManager.instance.team2Score.ToString();
