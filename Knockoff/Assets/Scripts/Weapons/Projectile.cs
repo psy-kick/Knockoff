@@ -10,6 +10,12 @@ public class Projectile : MonoBehaviourPunCallbacks
     [SerializeField] float radius = 2f;
     [SerializeField] Transform HitAudio;
 
+    private PlayerMovement playerMovement;
+    private void Start()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponentInParent<PlayerManager>() != null && collision.gameObject.GetComponentInParent<PlayerManager>().localPlayer)
@@ -36,6 +42,7 @@ public class Projectile : MonoBehaviourPunCallbacks
             Rigidbody exPlode = pv.GetComponent<Rigidbody>();
 ;           Vector3 knockbackDir = (photonView.transform.position - contactPoint).normalized;
             exPlode.AddForceAtPosition(-knockbackDir * expForce, contactPoint, ForceMode.Impulse);
+            playerMovement.anim.SetBool("GotHit", true);
         }
     }
 }

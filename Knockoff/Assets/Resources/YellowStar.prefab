@@ -2027,6 +2027,7 @@ MonoBehaviour:
   LandingAudioClip: {fileID: 0}
   FootstepAudioClips: []
   FootstepAudioVolume: 0.5
+  anim: {fileID: 0}
 --- !u!114 &1580496316617879084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,6 +2076,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 0
     Name: isFiring
+  - Type: 4
+    SynchronizeType: 0
+    Name: GotHit
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0

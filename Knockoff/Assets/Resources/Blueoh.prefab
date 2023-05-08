@@ -1934,6 +1934,7 @@ MonoBehaviour:
   LandingAudioClip: {fileID: 0}
   FootstepAudioClips: []
   FootstepAudioVolume: 0.5
+  anim: {fileID: 0}
 --- !u!114 &3479138874339300672
 MonoBehaviour:
   m_ObjectHideFlags: 0
