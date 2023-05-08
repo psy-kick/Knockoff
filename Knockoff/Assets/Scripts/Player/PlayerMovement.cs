@@ -51,7 +51,8 @@ namespace KnockOff.Player
 
         private float mouseSensitivity;
         private Rigidbody rb;
-        private Animator anim;
+        [HideInInspector]
+        public Animator anim;
         private int jumpCount = 0;
 
         //private bool canJump = true;
