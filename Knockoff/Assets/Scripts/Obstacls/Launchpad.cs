@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Launchpad : MonoBehaviour
 {
+    [SerializeField] private float force = 10f;
+
     private Rigidbody rb;
-    [SerializeField]private float force = 10f;
-    // Start is called before the first frame update
+
     void Start()
     {
-        rb = GetComponentInChildren<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
+
     void OnCollisionEnter(Collision collision)
     {
         // check if the collision is with a character or other solid object

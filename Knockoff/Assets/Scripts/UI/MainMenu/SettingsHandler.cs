@@ -53,8 +53,4 @@ public class SettingsHandler : MonoBehaviour
     {
         Screen.fullScreen = isFullScreen;
     }
-    public void Back()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
 }

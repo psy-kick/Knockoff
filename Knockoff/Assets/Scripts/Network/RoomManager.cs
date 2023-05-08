@@ -23,7 +23,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if (!PhotonNetwork.IsMasterClient)
         {
-            Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
+            Debug.LogFormat("PhotonNetwork : Trying to Load a level but we are not the master Client");
             return;
         }
 
