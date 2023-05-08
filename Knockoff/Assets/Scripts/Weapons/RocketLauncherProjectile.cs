@@ -30,7 +30,6 @@ public class RocketLauncherProjectile : Gun
             Vector3 aimDir = (mouseWorldPos - SpawnPoint.position).normalized;
             GameObject _projectile = PhotonNetwork.Instantiate(projectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir,Vector3.up));
             _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
-
             StartCoroutine(WaitForBullet(_projectile));
         }
     }
@@ -38,9 +37,17 @@ public class RocketLauncherProjectile : Gun
     private IEnumerator WaitForBullet(GameObject p)
     {
         yield return new WaitForSeconds(0.5f);
-        Instantiate(HitSound, p.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(HitVfx.name, p.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
+        Transform HitSoundInScene = Instantiate(HitSound, p.transform.position, Quaternion.identity);
+        GameObject HitVfxInScene = PhotonNetwork.Instantiate(HitVfx.name, p.transform.position, Quaternion.identity);
+        GameObject HitVfxTextInScene = PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
+        StartCoroutine(DestroyFx(HitVfxTextInScene, HitVfxInScene, HitSoundInScene));
         PhotonNetwork.Destroy(p);
+    }
+    IEnumerator DestroyFx(GameObject Htvfx, GameObject Hvfx, Transform HtSound)
+    {
+        yield return new WaitForSeconds(0.5f);
+        PhotonNetwork.Destroy(Htvfx);
+        PhotonNetwork.Destroy(Hvfx);
+        Destroy(HtSound.gameObject);
     }
 }
