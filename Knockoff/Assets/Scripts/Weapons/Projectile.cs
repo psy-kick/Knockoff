@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviourPunCallbacks
             {
                 Vector3 contactPoint = collision.contacts[0].point;
                 Instantiate(HitAudio, transform.position, Quaternion.identity);
+                Destroy(HitAudio, 1f);
                 photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, contactPoint);
             }
         }
