@@ -44,9 +44,17 @@ public class WaterGun : Gun
     private IEnumerator WaitForBullet(GameObject p)
     {
         yield return new WaitForSeconds(0.5f);
-        Instantiate(HitSound, p.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(HitVfx.name, p.transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
+        Transform HitSoundInScene = Instantiate(HitSound, p.transform.position, Quaternion.identity);
+        GameObject HitVfxInScene = PhotonNetwork.Instantiate(HitVfx.name, p.transform.position, Quaternion.identity);
+        GameObject HitVfxTextInScene = PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
+        StartCoroutine(DestroyFx(HitVfxTextInScene, HitVfxInScene, HitSoundInScene));
         PhotonNetwork.Destroy(p);
+    }
+    IEnumerator DestroyFx(GameObject Htvfx, GameObject Hvfx, Transform HtSound)
+    {
+        yield return new WaitForSeconds(0.5f);
+        PhotonNetwork.Destroy(Htvfx);
+        PhotonNetwork.Destroy(Hvfx);
+        Destroy(HtSound.gameObject);
     }
 }
