@@ -439,7 +439,7 @@ RectTransform:
   - {fileID: 7871395199627922527}
   - {fileID: 7871395199067141606}
   m_Father: {fileID: 7871395199287560425}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -514,10 +514,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7871395198791795261}
   - {fileID: 7871395199323655174}
   - {fileID: 7871395200274624219}
   - {fileID: 7871395200408984589}
-  - {fileID: 7871395198791795261}
   m_Father: {fileID: 7871395199292079886}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 7871395199323655179}
   - component: {fileID: 7871395199323655176}
   - component: {fileID: 7871395199323655177}
+  - component: {fileID: 3131032961088373725}
   m_Layer: 5
   m_Name: MainMenuBt
   m_TagString: Untagged
@@ -740,7 +741,7 @@ RectTransform:
   m_Children:
   - {fileID: 7871395199910313320}
   m_Father: {fileID: 7871395199287560425}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -963,6 +964,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainMenu
+--- !u!114 &3131032961088373725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871395199323655175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &7871395199330964724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1301,7 @@ GameObject:
   - component: {fileID: 7871395200274624220}
   - component: {fileID: 7871395200274624221}
   - component: {fileID: 7871395200274624218}
+  - component: {fileID: 2555512601500665073}
   m_Layer: 5
   m_Name: PlayAgainBt
   m_TagString: Untagged
@@ -1308,7 +1323,7 @@ RectTransform:
   m_Children:
   - {fileID: 7871395198447155184}
   m_Father: {fileID: 7871395199287560425}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1531,6 +1546,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainMenu
+--- !u!114 &2555512601500665073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871395200274624216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &7871395200291133422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +1845,7 @@ GameObject:
   - component: {fileID: 7871395200408984590}
   - component: {fileID: 7871395200408984591}
   - component: {fileID: 7871395200408984588}
+  - component: {fileID: 3223105822278900180}
   m_Layer: 5
   m_Name: QuitGameBt
   m_TagString: Untagged
@@ -1838,7 +1867,7 @@ RectTransform:
   m_Children:
   - {fileID: 7871395198738763098}
   m_Father: {fileID: 7871395199287560425}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2061,3 +2090,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MainMenu
+--- !u!114 &3223105822278900180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871395200408984586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0

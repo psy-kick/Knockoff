@@ -440,6 +440,7 @@ GameObject:
   - component: {fileID: 827973387330598409}
   - component: {fileID: 827973387330598414}
   - component: {fileID: 827973387330598411}
+  - component: {fileID: 2843352593463598607}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -659,6 +660,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2843352593463598607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827973387330598412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &827973387420304297
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +686,7 @@ GameObject:
   - component: {fileID: 827973387420304293}
   - component: {fileID: 827973387420304298}
   - component: {fileID: 827973387420304299}
+  - component: {fileID: 2353797472675597994}
   m_Layer: 5
   m_Name: Guide
   m_TagString: Untagged
@@ -891,6 +906,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2353797472675597994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827973387420304297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &827973387488712344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1068,7 @@ GameObject:
   - component: {fileID: 827973387644231390}
   - component: {fileID: 827973387644231391}
   - component: {fileID: 827973387644231384}
+  - component: {fileID: 3292300844786569454}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1259,6 +1288,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3292300844786569454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827973387644231389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &827973387693107447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1517,7 @@ GameObject:
   - component: {fileID: 827973388051104335}
   - component: {fileID: 827973388051104332}
   - component: {fileID: 827973388051104329}
+  - component: {fileID: 8531914248604457037}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1694,6 +1737,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8531914248604457037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827973388051104338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &827973388301312549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,6 +2037,7 @@ GameObject:
   - component: {fileID: 827973388613048991}
   - component: {fileID: 827973388613048988}
   - component: {fileID: 827973388613048985}
+  - component: {fileID: 8504164879543862992}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -2200,3 +2257,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8504164879543862992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827973388613049186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
