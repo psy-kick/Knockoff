@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 3509359279554027316}
   - component: {fileID: 3719174581072387622}
   - component: {fileID: 2243140966863736619}
+  - component: {fileID: 5893078756609687389}
   m_Layer: 0
   m_Name: powerUpZoomies
   m_TagString: SpeedBoost
@@ -752,6 +753,19 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &5893078756609687389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666209795898758799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c0ddfd18328124183ecb74c4d42f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedPoweUp: {fileID: 7666209795898758799}
 --- !u!1 &9084540330512768950
 GameObject:
   m_ObjectHideFlags: 0

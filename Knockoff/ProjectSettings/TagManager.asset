@@ -11,6 +11,9 @@ TagManager:
   - Killzone
   - FireRatePower
   - SpeedBoost
+  - ZoomSpawn
+  - EnergyBoost
+  - EnergySpawn
   layers:
   - Default
   - TransparentFX

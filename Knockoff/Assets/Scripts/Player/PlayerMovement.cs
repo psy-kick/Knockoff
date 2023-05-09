@@ -191,14 +191,8 @@ namespace KnockOff.Player
             if (other.tag == "SpeedBoost")
             {
                 MoveSpeed = 15f;
-                other.gameObject.SetActive(false);
-                StartCoroutine(ResetPowerUp());
+                PhotonNetwork.Destroy(other.gameObject);
             }
-        }
-        IEnumerator ResetPowerUp()
-        {
-            yield return new WaitForSeconds(3f);
-            MoveSpeed = OriginalSpeed;
         }
         /*
 
