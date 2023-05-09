@@ -10,6 +10,7 @@ namespace KnockOff.Player
         [Header("Player Settings")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 8.5f;
+        private float OriginalSpeed;
 
         [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 15f;
@@ -85,6 +86,7 @@ namespace KnockOff.Player
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
+            OriginalSpeed = MoveSpeed;
         }
 
         public void Look()
@@ -184,6 +186,20 @@ namespace KnockOff.Player
             return false;
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "SpeedBoost")
+            {
+                MoveSpeed = 15f;
+                other.gameObject.SetActive(false);
+                StartCoroutine(ResetPowerUp());
+            }
+        }
+        IEnumerator ResetPowerUp()
+        {
+            yield return new WaitForSeconds(3f);
+            MoveSpeed = OriginalSpeed;
+        }
         /*
 
         public void JumpWithEnergy()    

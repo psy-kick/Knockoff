@@ -15,14 +15,12 @@ public class MainMenuHandler : MonoBehaviour
     {
         if (PhotonNetwork.IsConnected)
         {
-            Debug.Log("its connected");
             m_AudioSource.Play();
             sceneName = "Lobby";
             Invoke("WaitForPhotonScene", 0.5f);
         }
         else
         {
-            Debug.Log("its Disconnected");
             m_AudioSource.Play();
             sceneName = "Launcher";
             Invoke("WaitForPhotonScene", 0.5f);

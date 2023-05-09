@@ -9,6 +9,8 @@ TagManager:
   - aimCam
   - 3dCam
   - Killzone
+  - FireRatePower
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX

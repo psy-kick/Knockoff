@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 3719174581072387622}
   m_Layer: 0
   m_Name: powerUpStronk
-  m_TagString: Untagged
+  m_TagString: FireRatePower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

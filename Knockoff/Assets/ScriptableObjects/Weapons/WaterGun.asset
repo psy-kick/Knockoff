@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: WaterGun
   m_EditorClassIdentifier: 
   ItemName: WaterGun
+  FireRate: 0.2

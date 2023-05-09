@@ -10,6 +10,8 @@ public class WaterGun : Gun
     public Transform SpawnPoint;
     public LayerMask aimLayerMask;
 
+    private float NextFire;
+
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] Transform HitVfxText;
     [SerializeField] Transform HitVfx;
@@ -33,11 +35,15 @@ public class WaterGun : Gun
         {
             mouseWorldPos = hitInfo.point;
             Vector3 aimDir = (mouseWorldPos - SpawnPoint.position).normalized;
-            GameObject _projectile = PhotonNetwork.Instantiate(WaterprojectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
-            _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
-            _projectile.GetComponent<WaterProjectile>().playerOwner = playerOwner.Owner;
+            if (Time.time > NextFire)
+            {
+                NextFire = Time.time + itemInfo.FireRate;
+                GameObject _projectile = PhotonNetwork.Instantiate(WaterprojectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
+                _projectile.GetComponent<WaterProjectile>().playerOwner = playerOwner.Owner;
 
-            StartCoroutine(WaitForBullet(_projectile));
+                StartCoroutine(WaitForBullet(_projectile));
+            }
         }
     }
 
