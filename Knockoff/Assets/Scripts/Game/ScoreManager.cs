@@ -36,7 +36,6 @@ namespace KnockOff.Game
             photonView.RPC("UpdateScores", RpcTarget.All, team1Score, team2Score);
         }
 
-
         public void UpdateTeamScore(int teamNumber, int scoreChange)
         {
             if (teamNumber == PhotonTeamsManager.Instance.GetAvailableTeams()[0].Code)

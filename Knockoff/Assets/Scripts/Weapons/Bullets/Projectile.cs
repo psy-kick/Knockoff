@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviourPunCallbacks
             {
                 Vector3 contactPoint = collision.contacts[0].point;
                 Instantiate(HitAudio, transform.position, Quaternion.identity);
-                Destroy(HitAudio, 1f);
+                Destroy(HitAudio.gameObject, 1f);
                 photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, contactPoint);
             }
         }
@@ -48,11 +48,14 @@ public class Projectile : MonoBehaviourPunCallbacks
 
     private bool IsFriendlyFire(int targetPlayerID)
     {
+        return false;       //decided to give score to opposing team even if friendly fire
+
+        /*
         PhotonView pv = PhotonView.Find(targetPlayerID);
 
         if (photonView.Owner.GetPhotonTeam() == pv.Owner.GetPhotonTeam())
             return true;
 
-        return false;
+        return false;*/
     }
 }
