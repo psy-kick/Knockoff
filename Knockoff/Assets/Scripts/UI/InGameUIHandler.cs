@@ -11,6 +11,9 @@ public class InGameUIHandler : MonoBehaviourPunCallbacks
     [SerializeField] private TextMeshProUGUI team1ScoreTxt;
     [SerializeField] private TextMeshProUGUI team2ScoreTxt;
 
+    [Header("Timer Properties")]
+    public TextMeshProUGUI timerTxt;
+
     public void UpdateScoresUI()
     {
         Debug.Log("UPDATE SCORE");

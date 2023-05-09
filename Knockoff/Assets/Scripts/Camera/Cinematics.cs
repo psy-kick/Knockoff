@@ -1,7 +1,6 @@
+using KnockOff;
 using KnockOff.Player;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cinematics : MonoBehaviour
@@ -24,5 +23,6 @@ public class Cinematics : MonoBehaviour
         yield return new WaitForSeconds(6f);
         playerManager.gameObject.SetActive(true);
         this.gameObject.SetActive(false);
+        GameManager.instance.isMatchPlaying = true;
     }
 }

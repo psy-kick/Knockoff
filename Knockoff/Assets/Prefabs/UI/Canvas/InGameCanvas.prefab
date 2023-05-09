@@ -705,6 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team1ScoreTxt: {fileID: 1909197747124074085}
   team2ScoreTxt: {fileID: 1909197747275560648}
+  timerTxt: {fileID: 1909197747798152070}
 --- !u!1 &1909197747275560654
 GameObject:
   m_ObjectHideFlags: 0

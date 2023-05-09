@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 3001292942652683113}
   - component: {fileID: 3001292942652683112}
   - component: {fileID: 924399584186606159}
+  - component: {fileID: 5752093139313331729}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -459,6 +460,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5752093139313331729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001292942652683114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &3001292943228993906
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +526,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 49f18a1da8a98fc41b5b25b4d5c2bcd9, type: 2}
   - {fileID: 11400000, guid: 3e17ed1174b436a47997c0a808cf15c2, type: 2}
   CharacterSelected: {fileID: 0}
-  buttonSound: {fileID: 924399584186606159}
 --- !u!114 &2917349188760533986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,6 +911,7 @@ GameObject:
   - component: {fileID: 986833270464191612}
   - component: {fileID: 5966001601335549790}
   - component: {fileID: 971246743875951615}
+  - component: {fileID: 6034467670971927842}
   m_Layer: 5
   m_Name: ButtonRight
   m_TagString: Untagged
@@ -1128,6 +1142,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6034467670971927842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797274386013137134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
 --- !u!1 &7325931894375634981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1304,7 @@ GameObject:
   - component: {fileID: 7003520905518671011}
   - component: {fileID: 8862383446577420660}
   - component: {fileID: 8914009481456768139}
+  - component: {fileID: 4740646771992105067}
   m_Layer: 5
   m_Name: ButtonLeft
   m_TagString: Untagged
@@ -1507,3 +1535,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4740646771992105067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8447855496896356005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bad1b2344c77ae4faa586acd7bc574d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableEffectType: 0
