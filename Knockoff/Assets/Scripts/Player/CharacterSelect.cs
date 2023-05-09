@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Photon.Pun;
-using KnockOff.Game;
+using KnockOff;
+using KnockOff.Player;
 
 public class CharacterSelect : MonoBehaviourPunCallbacks
 {
-    [SerializeField]
-    private GameObject CharacterSelectToDisplay = default;
-    [SerializeField]
-    private Transform CharacterPreviewParent = default;
-    [SerializeField]
-    private TMP_Text CharacterNameText = default;
-    [SerializeField]
-    private PlayerCharacters[] characterList = default;
+    [SerializeField] private GameObject CharacterSelectToDisplay = default;
+    [SerializeField] private Transform CharacterPreviewParent = default;
+    [SerializeField] private TMP_Text CharacterNameText = default;
+    [SerializeField] private PlayerCharacters[] characterList = default;
+
+    private List<GameObject> CharacterInstances = new List<GameObject>();
+    private PlayerSpawner playerSpawner;
 
     private int CurrentCharaterIndex = 0;
-    private List<GameObject> CharacterInstances = new List<GameObject>();
+    private int playersDoneSelecting = 0;
 
     [HideInInspector]
     public GameObject CharacterSelected;
 
-    [SerializeField] private AudioSource buttonSound;
+    private void Awake()
+    {
+        playerSpawner = FindObjectOfType<PlayerSpawner>();
+    }
 
-    private int playersDoneSelecting = 0;
-
-    // Start is called before the first frame update
     void Start()
     {
         if (CharacterPreviewParent.childCount == 0)
@@ -41,29 +41,20 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
             CharacterNameText.text = characterList[CurrentCharaterIndex].CharacterName;
 
             CharacterSelectToDisplay.SetActive(true);
-
         }
 
         // Get the current value of the custom room property
         if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("NumSelectedCharacters", out object value))
-        {
             playersDoneSelecting = (int)value;
-        }
-
-        //reset back to 0
-        PlayerPrefs.SetInt("CharacterIndex", 0);
     }
 
     public void OnClickSelected(int characterIndex)
     {
-        buttonSound.Play();
         CharacterSelected = characterList[characterIndex].GameCharaterPrefab;
 
         // Get the current value of the custom room property
         if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("NumSelectedCharacters", out object value))
-        {
             playersDoneSelecting = (int)value;
-        }
 
         // Increment the number of selected characters
         playersDoneSelecting++;
@@ -73,36 +64,17 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
         props.Add("NumSelectedCharacters", playersDoneSelecting);
         PhotonNetwork.CurrentRoom.SetCustomProperties(props);
 
+        GameManager.instance.selectedCharacterIndex = CurrentCharaterIndex;
+
         // Check if all players have selected their character
         if (playersDoneSelecting == PhotonNetwork.CurrentRoom.MaxPlayers)
-        {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                // Load the waiting room scene
-                Invoke("WaitForPhotonSceneLoad", 0.5f);
-            }
-            else
-            {
-                // Send an RPC to the master client to load the next level
-                GetComponent<PhotonView>().RPC("LoadLevelRPC", RpcTarget.MasterClient, "WaitingRoom");
-            }
-        }
-    }
-
-    public void WaitForPhotonSceneLoad()
-    {
-        // Load the waiting room scene
-        PhotonNetwork.LoadLevel("WaitingRoom");
+            photonView.RPC("StartGameOnAllClients", RpcTarget.All);
     }
 
     [PunRPC]
-    void LoadLevelRPC(string levelName)
+    public void StartGameOnAllClients()
     {
-        // The master client loads the specified level
-        if (PhotonNetwork.IsMasterClient)
-        {
-            Invoke("WaitForPhotonSceneLoad", 0.5f);
-        }
+        playerSpawner.StartGame();
     }
 
     public void OnClickRight()
@@ -111,18 +83,16 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
         CurrentCharaterIndex = (CurrentCharaterIndex + 1) % CharacterInstances.Count;
         CharacterInstances[CurrentCharaterIndex].SetActive(true);
         CharacterNameText.text = characterList[CurrentCharaterIndex].CharacterName;
-        PlayerPrefs.SetInt("CharacterIndex", CurrentCharaterIndex);
     }
+
     public void OnClickLeft()
     {
         CharacterInstances[CurrentCharaterIndex].SetActive(false);
         CurrentCharaterIndex--;
         if (CurrentCharaterIndex < 0)
-        {
             CurrentCharaterIndex += CharacterInstances.Count;
-        }
+
         CharacterInstances[CurrentCharaterIndex].SetActive(true);
         CharacterNameText.text = characterList[CurrentCharaterIndex].CharacterName;
-        PlayerPrefs.SetInt("CharacterIndex", CurrentCharaterIndex);
     }
 }

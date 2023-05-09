@@ -16,7 +16,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        LoadArena();
+        //LoadArena();
     }
 
     public void LoadArena()

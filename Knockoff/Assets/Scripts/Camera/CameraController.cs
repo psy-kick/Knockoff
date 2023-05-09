@@ -20,12 +20,11 @@ namespace KnockOff.Camera
         private void Awake()
         {
             playerMovement = GetComponent<PlayerMovement>();
+            playerPhotonView = GetComponent<PhotonView>();
         }
 
         private void Start()
         {
-            playerPhotonView = GetComponent<PhotonView>();
-
             virtualCamera = GameObject.FindGameObjectWithTag("3dCam");
             aimVirtualCam = GameObject.FindGameObjectWithTag("aimCam");
         }
@@ -46,23 +45,25 @@ namespace KnockOff.Camera
         private void AimCam(PhotonView playerPhotonView)
         {
             if (aimVirtualCam == null)
-            {
                 aimVirtualCam = GameObject.FindGameObjectWithTag("aimCam");
-            }
-            // Set the virtual camera to follow the local player
-            if (playerPhotonView != null)
+
+            if (aimVirtualCam != null)
             {
-                aimVirtualCam.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0).GetChild(0);//camTarget, less expensive than findbytag                                                                                            
-            }
-            if (Input.GetMouseButton(1))
-            {
-                aimVirtualCam.gameObject.SetActive(true);
-                playerMovement.SetSensitivity(aimSensitivity);
-            }
-            else
-            {
-                aimVirtualCam.gameObject.SetActive(false);
-                playerMovement.SetSensitivity(normalSensitivity);
+                // Set the virtual camera to follow the local player
+                if (playerPhotonView != null)
+                {
+                    aimVirtualCam.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0).GetChild(0);//camTarget, less expensive than findbytag                                                                                            
+                }
+                if (Input.GetMouseButton(1))
+                {
+                    aimVirtualCam.gameObject.SetActive(true);
+                    playerMovement.SetSensitivity(aimSensitivity);
+                }
+                else
+                {
+                    aimVirtualCam.gameObject.SetActive(false);
+                    playerMovement.SetSensitivity(normalSensitivity);
+                }
             }
         }
 
@@ -73,7 +74,7 @@ namespace KnockOff.Camera
                 virtualCamera = GameObject.FindGameObjectWithTag("3dCam");
             }
             // Set the virtual camera to follow the local player
-            if (playerPhotonView != null)
+            if (playerPhotonView != null && virtualCamera != null)
             {
                 virtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = playerPhotonView.transform.GetChild(0).GetChild(0);       //camTarget, less expensive than findbytag
             }

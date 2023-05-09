@@ -1,4 +1,5 @@
 using KnockOff.Player;
+using KnockOff.Game;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
 using System.Collections;

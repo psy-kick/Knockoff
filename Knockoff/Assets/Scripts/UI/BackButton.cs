@@ -10,6 +10,11 @@ public class BackButton : MonoBehaviour
 
     public void OnclickBack()
     {
+        Invoke("WaitForSceneLoad", 0.5f);
+    }
+
+    private void WaitForSceneLoad()
+    {
         SceneManager.LoadScene(sceneName);
     }
 }

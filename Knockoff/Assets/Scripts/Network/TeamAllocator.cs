@@ -13,14 +13,14 @@ public class TeamAllocator : MonoBehaviourPunCallbacks
     }
  
     // Assign players to teams
-    void AssignTeams()
+    public void AssignTeams()
     {
         if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
             Debug.Log("TEAM ASSIGNED");
             // Get a list of all the players in the game
             List<Player> players = new List<Player>(PhotonNetwork.PlayerList);
-            //players[0].joi
+
             // Shuffle the player list
             Shuffle(players);
 

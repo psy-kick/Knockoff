@@ -7,15 +7,18 @@ using UnityEngine;
 public class Cinematics : MonoBehaviour
 {
     private PlayerManager playerManager;
+
     private void Start()
     {
         playerManager = FindObjectOfType<PlayerManager>();
         playerManager.gameObject.SetActive(false);
     }
+
     private void Update()
     {
         StartCoroutine(CinematicOff());
     }
+
     IEnumerator CinematicOff()
     {
         yield return new WaitForSeconds(6f);
