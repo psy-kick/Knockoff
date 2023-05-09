@@ -11,7 +11,7 @@ public class MainMenuHandler : MonoBehaviour
     private string sceneName;
 
     #region Button References
-    public void play()
+    public void GoPlay()
     {
         if (PhotonNetwork.IsConnected)
         {
@@ -28,21 +28,31 @@ public class MainMenuHandler : MonoBehaviour
             Invoke("WaitForPhotonScene", 0.5f);
         }
     }
-    public void Options()
+
+    public void GoSettings()
     {
         m_AudioSource.Play();
-        sceneName = "Options";
+        sceneName = "Settings";
         Invoke("WaitForLoadScene", 0.5f);
     }
-    public void Exit()
+
+    public void GoGuide()
     {
-        Application.Quit();
+        m_AudioSource.Play();
+        sceneName = "Guide";
+        Invoke("WaitForLoadScene", 0.5f);
     }
-    public void Credits()
+
+    public void GoCredits()
     {
         m_AudioSource.Play();
         sceneName = "Credits";
         Invoke("WaitForLoadScene", 0.5f);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
     public void WaitForLoadScene()

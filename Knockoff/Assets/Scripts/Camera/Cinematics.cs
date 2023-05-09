@@ -1,7 +1,6 @@
 using KnockOff;
 using KnockOff.Player;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cinematics : MonoBehaviour
