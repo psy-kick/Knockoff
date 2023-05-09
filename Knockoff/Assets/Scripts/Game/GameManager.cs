@@ -10,6 +10,7 @@ namespace KnockOff
         public static GameManager instance { get; private set; }
 
         //Persistent Public Properties
+        public bool isMatchPlaying { get; set; }
         public int selectedCharacterIndex { get; set; }
 
         private void Awake()
