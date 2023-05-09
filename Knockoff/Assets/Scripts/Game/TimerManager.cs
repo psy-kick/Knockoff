@@ -6,10 +6,12 @@ using KnockOff;
 
 public class TimerManager : MonoBehaviourPunCallbacks
 {
-    public float timerDuration = 10f; // 10 minutes 
+    public float timerDuration = 600f; // 10 minutes in seconds
 
     private float currentTimer;
     private InGameUIHandler gameUIHandler;
+
+    [SerializeField] private GameObject gameOverCanvasPrefab;
 
     private void Awake()
     {
@@ -56,6 +58,8 @@ public class TimerManager : MonoBehaviourPunCallbacks
     void EndMatch()
     {
         // End the match and display the results here
+        GameManager.instance.isMatchPlaying = false;
+        PhotonNetwork.Instantiate(gameOverCanvasPrefab.name, Vector3.zero, Quaternion.identity);
     }
 
     private string FormatTime(float time)
