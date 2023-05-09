@@ -30,7 +30,7 @@ namespace KnockOff.Player
 
         private void Update()
         {
-            if (photonView.IsMine)
+            if (photonView.IsMine && GameManager.instance.isMatchPlaying)
             {
                 ProcessInputs();
                 WeaponSwitchInputs();

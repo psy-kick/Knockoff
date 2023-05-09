@@ -9,6 +9,9 @@ public class TeamAllocator : MonoBehaviourPunCallbacks
 {
     private void Start()
     {
+        if (!PhotonNetwork.IsConnected)
+            PhotonNetwork.ConnectUsingSettings();
+
         AssignTeams();
     }
  

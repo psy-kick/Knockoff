@@ -45,6 +45,18 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void ChangeToMainMenuMusic()
+    {
+        MusicAudioSource.Stop();
+        MusicAudioSource.clip = mainMenuMusic;
+        MusicAudioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        MusicAudioSource.Stop();
+    }
+
 
     /*
     public void PlayStopSound(bool play)

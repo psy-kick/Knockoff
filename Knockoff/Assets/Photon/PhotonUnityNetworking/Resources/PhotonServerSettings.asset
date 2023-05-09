@@ -51,6 +51,7 @@ MonoBehaviour:
   - StartGameOnAllClients
   - EndMatch
   - UpdateTimerDisplay
+  - LeaveCurrentTeam
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

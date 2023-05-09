@@ -141,7 +141,7 @@ namespace KnockOff.Player
         
         private void Update()
         {
-            if (photonView.IsMine)
+            if (photonView.IsMine && GameManager.instance.isMatchPlaying)
             {
                 RaycastHit hit;
                 isGrounded = DetectGround(out hit, 1f, groundLayer);

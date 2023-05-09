@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 
 namespace KnockOff.Player
 {
@@ -9,13 +10,10 @@ namespace KnockOff.Player
     {
         [SerializeField] private GameObject[] playerPrefab;
 
-        private RoomManager roomManager;
         private int playersInstantiatedCount = 0;
 
-        private void Awake()
-        {
-            roomManager = FindObjectOfType<RoomManager>();
-        }
+        [Tooltip("The name of the arena scene")]
+        public string arenaSceneTxt = "GameScene";
 
         public void StartGame()
         {
@@ -36,7 +34,6 @@ namespace KnockOff.Player
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    //int characterIndex = PlayerPrefs.GetInt("CharacterIndex");
                     player = PhotonNetwork.Instantiate(playerPrefab[GameManager.instance.selectedCharacterIndex].name, Vector3.zero, Quaternion.identity, 0);
                     photonView.RPC("IncrementPlayersInstantiatedCount", RpcTarget.All);
                 }
@@ -57,7 +54,23 @@ namespace KnockOff.Player
             if (playersInstantiatedCount == PhotonNetwork.CurrentRoom.MaxPlayers)
             {
                 AudioManager.instance.ChangeToGameplayMusic();
-                roomManager.LoadArena();
+                LoadArena();
+            }
+        }
+
+        public void LoadArena()
+        {
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                Debug.LogFormat("PhotonNetwork : Trying to Load a level but we are not the master Client");
+                return;
+            }
+
+            if (PhotonNetwork.CurrentRoom.PlayerCount == LobbyManager.MaxPlayersPerRoom)
+            {
+                Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+                PhotonNetwork.LoadLevel(arenaSceneTxt);   // we don't use Unity directly, because we want to rely on Photon to load this level on all connected clients in the room,
+                                                         // since we've enabled PhotonNetwork.AutomaticallySyncScene for this Game. (PhotonNetwork.CurrentRoom.PlayerCount)
             }
         }
     }

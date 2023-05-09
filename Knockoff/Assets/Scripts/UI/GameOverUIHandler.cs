@@ -14,33 +14,28 @@ public class GameOverUIHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI score1;
     [SerializeField] private TextMeshProUGUI score2;
 
-    private string sceneName;
-
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         team1Name.text = PhotonTeamsManager.Instance.GetAvailableTeams()[0].Name;
         team2Name.text = PhotonTeamsManager.Instance.GetAvailableTeams()[1].Name;
         score1.text = ScoreManager.instance.team1Score.ToString();
         score2.text = ScoreManager.instance.team2Score.ToString();
-
 
         //need to show and save who's the winner
     }
 
     public void GoMainMenu()
     {
-        sceneName = "MainMenu";
-        Invoke("WaitForPhotonScene", 0.5f);
+        AudioManager.instance.ChangeToMainMenuMusic();
+        PhotonNetwork.Disconnect();
     }
 
     public void PlayAgain()
     {
         //need to restart everything
-    }
-
-    private void WaitForPhotonScene()
-    {
-        PhotonNetwork.LoadLevel(sceneName);
     }
 
     public void ExitGame()

@@ -5,6 +5,7 @@ using TMPro;
 using Photon.Pun;
 using KnockOff;
 using KnockOff.Player;
+using Photon.Pun.UtilityScripts;
 
 public class CharacterSelect : MonoBehaviourPunCallbacks
 {
@@ -46,6 +47,9 @@ public class CharacterSelect : MonoBehaviourPunCallbacks
         // Get the current value of the custom room property
         if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("NumSelectedCharacters", out object value))
             playersDoneSelecting = (int)value;
+
+        foreach (Photon.Realtime.Player p in PhotonNetwork.PlayerList)
+            p.LeaveCurrentTeam();
     }
 
     public void OnClickSelected(int characterIndex)

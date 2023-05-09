@@ -59,6 +59,7 @@ public class TimerManager : MonoBehaviourPunCallbacks
     {
         // End the match and display the results here
         GameManager.instance.isMatchPlaying = false;
+        AudioManager.instance.StopMusic();
         PhotonNetwork.Instantiate(gameOverCanvasPrefab.name, Vector3.zero, Quaternion.identity);
     }
 

@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Objective: Knock off players to earn the highest score before the time
+  m_text: 'Objective: Knock off players to earn the highest score before the timer
     runs out!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 885d9594d2d0a66438f9de68f0944d11, type: 2}
@@ -1194,12 +1194,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.35
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
