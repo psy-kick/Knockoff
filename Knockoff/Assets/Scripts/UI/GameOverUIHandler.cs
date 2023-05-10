@@ -14,6 +14,8 @@ public class GameOverUIHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI score1;
     [SerializeField] private TextMeshProUGUI score2;
 
+    PlayfabManager playfabManager;
+
     private void Start()
     {
         Cursor.visible = true;
@@ -25,6 +27,9 @@ public class GameOverUIHandler : MonoBehaviour
         score2.text = ScoreManager.instance.team2Score.ToString();
 
         //need to show and save who's the winner
+        playfabManager = FindObjectOfType<PlayfabManager>();
+        playfabManager.SendScoreSystemTeam1(ScoreManager.instance.team1Score);
+        playfabManager.SendScoreSystemTeam2(ScoreManager.instance.team2Score);
     }
 
     public void GoMainMenu()
