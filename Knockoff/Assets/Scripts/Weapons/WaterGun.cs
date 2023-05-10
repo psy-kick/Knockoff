@@ -40,7 +40,7 @@ public class WaterGun : Gun
                 NextShoot = Time.time + itemInfo.FireRate;
                 GameObject _projectile = PhotonNetwork.Instantiate(WaterprojectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
                 _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
-                _projectile.GetComponent<Projectile>().playerOwner = playerOwner.Owner;
+                _projectile.GetComponent<WaterProjectile>().playerOwner = playerOwner.Owner;
 
                 StartCoroutine(WaitForBullet(_projectile));
             }
@@ -50,6 +50,7 @@ public class WaterGun : Gun
     private IEnumerator WaitForBullet(GameObject p)
     {
         yield return new WaitForSeconds(0.5f);
+        Debug.LogErrorFormat("COROUTINE");
         Transform HitSoundInScene = Instantiate(HitSound, p.transform.position, Quaternion.identity);
         GameObject HitVfxInScene = PhotonNetwork.Instantiate(HitVfx.name, p.transform.position, Quaternion.identity);
         GameObject HitVfxTextInScene = PhotonNetwork.Instantiate(HitVfxText.name, p.transform.position, Quaternion.identity);
