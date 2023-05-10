@@ -1,48 +1,39 @@
-﻿using Photon.Pun;
-using Photon.Pun.UtilityScripts;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using Photon.Pun;
+using TMPro;
+using Photon.Pun.UtilityScripts;
 
-namespace KnockOff.Player
+namespace KnockOff.Player.UI
 {
-    public class PlayerNameText : MonoBehaviourPunCallbacks
+    public class ShowPlayerTeamUI : MonoBehaviourPunCallbacks
     {
-        private TextMeshPro userNameTxt;
+        private TextMeshProUGUI teamName;
 
         private void Start()
         {
-            userNameTxt = GetComponent<TextMeshPro>();
+            teamName = GetComponentInChildren<TextMeshProUGUI>();
         }
 
         private void Update()
         {
-            if (GameManager.instance.isMatchPlaying)
-            {
-                photonView.RPC("SetPlayerUsernameForOtherPlayers", RpcTarget.All);
-            }
+            photonView.RPC("SetTeamNameAtStart", RpcTarget.All);
         }
 
         [PunRPC]
-        public void SetPlayerUsernameForOtherPlayers()
+        public void SetTeamNameAtStart()
         {
-            SetText(photonView.Owner.NickName);
-            SetColour(photonView.Owner.GetPhotonTeam().Name);
-
-            if (photonView.IsMine)
+            if (PhotonNetwork.LocalPlayer.GetPhotonTeam() != null)
             {
-                userNameTxt.enabled = false;
-            }
-            else
-            {
-                userNameTxt.enabled = true;
+                teamName.text = "You are on the " + PhotonNetwork.LocalPlayer.GetPhotonTeam().Name + " Team";
+                SetColour(PhotonNetwork.LocalPlayer.GetPhotonTeam().Name);
             }
         }
 
-        public void SetText(string s)
+        public void DisableObject()
         {
-            userNameTxt.text = s;
+            gameObject.SetActive(false);
         }
 
         public void SetColour(string s)
@@ -50,7 +41,7 @@ namespace KnockOff.Player
             Color color;
 
             if (ColorUtility.TryParseHtmlString(GetColorString(s), out color))
-                userNameTxt.color = color;
+                teamName.color = color;
         }
 
         // Helper function to get the color string for known color names
@@ -69,5 +60,7 @@ namespace KnockOff.Player
                     return "#000000";
             }
         }
-    }
+
+    }   
 }
+

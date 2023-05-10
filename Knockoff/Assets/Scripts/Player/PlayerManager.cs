@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using TMPro;
 
 namespace KnockOff.Player
 {
@@ -11,34 +10,25 @@ namespace KnockOff.Player
     [RequireComponent(typeof(PlayerAttack))]
     public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
-        #region Public Fields
-
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-        [HideInInspector]
-        public PlayerManager localPlayer;
+        #region Public Fields
+        public PlayerManager localPlayer { get; private set; }
+        public PhotonTeam playerTeam { get; private set; }
+        public string playerUsername { get; private set; }
 
         #endregion
 
         #region Private Fields
-
-        [SerializeField] private TextMeshPro userNameTxt; 
 
         private PlayerMovement playerMovement;
         private PlayerAttack playerAttack;
 
         #endregion
 
-        public PhotonTeam playerTeam { get; private set; }
-        public string playerUsername { get; private set; }
-
-        #region Monobehaviour Callbacks
-
         private void Awake()
         {
-            // #Important
-            // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
             if (photonView.IsMine)
             {
                 PlayerManager.LocalPlayerInstance = this.gameObject;
@@ -72,14 +62,8 @@ namespace KnockOff.Player
 
                 // Set the TagObject property to the player's GameObject
                 p.TagObject = this.gameObject;
-
-                //only show username to other players, not myself
-                photonView.RPC("SetPlayerNameForOtherPlayers", RpcTarget.Others, playerUsername, playerTeam.Name);
             }
         }
-
-        #endregion
-
 
         #region IPunObservable implementation
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -100,33 +84,6 @@ namespace KnockOff.Player
 
         #endregion
 
-        [PunRPC]
-        void SetPlayerNameForOtherPlayers(string playerName, string playerTeamName)
-        {
-            userNameTxt.text = playerName;
 
-            string colorString = playerTeamName;
-            Color color;
-
-            if (ColorUtility.TryParseHtmlString(GetColorString(colorString), out color))
-                userNameTxt.color = color;
-        }
-
-        // Helper function to get the color string for known color names
-        private string GetColorString(string colorName)
-        {
-            switch (colorName.ToLower())
-            {
-                case "red":
-                    return "#FF0000";
-                case "green":
-                    return "#00FF00";
-                case "blue":
-                    return "#0000FF";
-                // Add more cases for other colors as needed
-                default:
-                    return "#000000";
-            }
-        }
     }
 }

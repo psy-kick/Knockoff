@@ -13566,6 +13566,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5846185912634672228, guid: 60f3714ae47026147b0dd10d442cc58c,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60f3714ae47026147b0dd10d442cc58c, type: 3}
 --- !u!1001 &790314152
@@ -33132,12 +33137,12 @@ PrefabInstance:
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06783342
+      value: 0.06783343
       objectReference: {fileID: 0}
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23510277
+      value: -0.23510279
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7389bd4c76cf540bdd82dc5981e42c, type: 3}

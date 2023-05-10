@@ -10,18 +10,7 @@ public class PopUpEffect : MonoBehaviour
     [SerializeField] private float effectValue = 0.5f;
     [SerializeField] private float duration = 0.5f;
 
-    private void Start()
-    {
-        if (effectValue == 0)
-            ClosePopUP();
-    }
-
     private void OnEnable()
-    {
-        OpenPopUp();
-    }
-
-    private void OnDisable()
     {
         ClosePopUP();
     }
@@ -34,5 +23,6 @@ public class PopUpEffect : MonoBehaviour
     public void ClosePopUP()
     {
         popUp.GetComponent<Image>().DOFade(0f, duration);
+        popUp.gameObject.SetActive(false);
     }
 }
