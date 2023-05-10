@@ -405,6 +405,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 107
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -603,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 6402029652508232962, guid: 4ef8bc37de63adb4c863bb86d3bf7461,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6402029652508232962, guid: 4ef8bc37de63adb4c863bb86d3bf7461,
         type: 3}
@@ -2217,10 +2227,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -2581,6 +2601,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -4535,7 +4565,7 @@ PrefabInstance:
     - target: {fileID: 1631212530603791337, guid: c08af7767843f5d44836f26347ffa3a5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1631212530603791337, guid: c08af7767843f5d44836f26347ffa3a5,
         type: 3}
@@ -4700,6 +4730,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -5150,6 +5190,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -5228,7 +5278,7 @@ PrefabInstance:
     - target: {fileID: 871834286691716890, guid: 22e635bf4f5acb84787e7d4d66b3545f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 871834286691716890, guid: 22e635bf4f5acb84787e7d4d66b3545f,
         type: 3}
@@ -5470,6 +5520,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -7197,6 +7257,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin10Temp (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140156139290400191, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 114
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 8809f4dd201ffe1489397b2213cb6772,
         type: 3}
       propertyPath: m_RootOrder
@@ -7635,10 +7705,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -7710,10 +7790,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -7979,7 +8069,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &447782344
 PrefabInstance:
@@ -8157,6 +8247,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -8422,7 +8522,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &471121104
 PrefabInstance:
@@ -9309,6 +9409,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 86
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -9383,6 +9493,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -9645,6 +9765,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -10078,6 +10208,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -11001,10 +11141,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -11350,6 +11500,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -12924,6 +13084,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 78
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -13538,7 +13708,7 @@ PrefabInstance:
     - target: {fileID: 1909197747226025305, guid: 60f3714ae47026147b0dd10d442cc58c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1909197747226025305, guid: 60f3714ae47026147b0dd10d442cc58c,
         type: 3}
@@ -13738,6 +13908,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -14329,7 +14509,7 @@ PrefabInstance:
     - target: {fileID: 1669598786616316016, guid: c60b972c461792a45b32eeefdb65b959,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1669598786616316016, guid: c60b972c461792a45b32eeefdb65b959,
         type: 3}
@@ -14418,7 +14598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627909804491518, guid: d1d7f6d670a38f84d82180544cf7d7f0, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4627909804491518, guid: d1d7f6d670a38f84d82180544cf7d7f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -14759,10 +14939,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -15177,7 +15367,7 @@ Transform:
   - {fileID: 2067237374}
   - {fileID: 141047989}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871528870
 GameObject:
@@ -15619,10 +15809,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -16046,6 +16246,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -16195,6 +16405,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -16554,7 +16774,7 @@ PrefabInstance:
     - target: {fileID: 1285975600062512081, guid: 05d786f22431d9b45835a75cd1d44757,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1285975600062512081, guid: 05d786f22431d9b45835a75cd1d44757,
         type: 3}
@@ -17417,6 +17637,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 103
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -17565,7 +17795,7 @@ PrefabInstance:
     - target: {fileID: 2072889927622927237, guid: bdf278ad756bcec489546a0ef72bdd6d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2072889927622927237, guid: bdf278ad756bcec489546a0ef72bdd6d,
         type: 3}
@@ -17640,6 +17870,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -18194,10 +18434,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -18269,10 +18519,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -18449,7 +18709,7 @@ PrefabInstance:
     - target: {fileID: 8790193591230936734, guid: e962ba4161d764f4a927012e838a999f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8790193591230936734, guid: e962ba4161d764f4a927012e838a999f,
         type: 3}
@@ -18753,6 +19013,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 77
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -18823,10 +19093,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -19062,10 +19342,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -19141,6 +19431,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -19835,7 +20135,7 @@ PrefabInstance:
     - target: {fileID: 1598998412068600577, guid: 44b8f1d06d4b87047ac2bf6355179fd7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1598998412068600577, guid: 44b8f1d06d4b87047ac2bf6355179fd7,
         type: 3}
@@ -19901,10 +20201,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -19976,10 +20286,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -21788,6 +22108,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 71
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -22223,6 +22553,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin10Temp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140156139290400191, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 118
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 8809f4dd201ffe1489397b2213cb6772,
         type: 3}
       propertyPath: m_RootOrder
@@ -22368,10 +22708,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -22612,6 +22962,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 109
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -23265,6 +23625,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 106
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -23527,6 +23897,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -23796,7 +24176,7 @@ PrefabInstance:
     - target: {fileID: 7110802521407468880, guid: 436f4e54968680044853bac76bb821f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7110802521407468880, guid: 436f4e54968680044853bac76bb821f9,
         type: 3}
@@ -24294,6 +24674,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 33
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -24549,6 +24939,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -24713,6 +25113,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -24885,6 +25295,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -25675,6 +26095,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 82
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -26275,6 +26705,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -27233,6 +27673,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 73
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -27570,6 +28020,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 88
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -27719,6 +28179,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -28230,6 +28700,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin10Temp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140156139290400191, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 8809f4dd201ffe1489397b2213cb6772,
         type: 3}
@@ -28987,6 +29467,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin10Temp (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140156139290400191, guid: 8809f4dd201ffe1489397b2213cb6772,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 8809f4dd201ffe1489397b2213cb6772,
         type: 3}
       propertyPath: m_RootOrder
@@ -29482,6 +29972,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 62
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -29736,6 +30236,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -30451,7 +30961,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1984586376
 PrefabInstance:
@@ -30895,10 +31405,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -30974,6 +31494,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -31236,6 +31766,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -31477,10 +32017,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -31999,6 +32549,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -32069,10 +32629,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 868079114}
     m_Modifications:
+    - target: {fileID: 3501552546863810401, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
       propertyPath: m_Name
       value: coin1Temp (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 0b944da81a2a13c4aab07632c7aefc67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 0b944da81a2a13c4aab07632c7aefc67,
         type: 3}
@@ -32238,6 +32808,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -32564,6 +33144,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin5Temp (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -32638,6 +33228,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coin5Temp (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854322271084512550, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994507372717895386, guid: 724f80bfbef51aa47b3fed351a1055a0,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6903154019781684472, guid: 724f80bfbef51aa47b3fed351a1055a0,
         type: 3}
@@ -33126,7 +33726,7 @@ PrefabInstance:
     - target: {fileID: 3795822679503504820, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3795822679503504820, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
@@ -33201,17 +33801,17 @@ PrefabInstance:
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.26879117
+      value: 0.26879114
       objectReference: {fileID: 0}
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06783342
+      value: 0.06783343
       objectReference: {fileID: 0}
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23510277
+      value: -0.23510279
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7389bd4c76cf540bdd82dc5981e42c, type: 3}
@@ -33235,7 +33835,7 @@ PrefabInstance:
     - target: {fileID: 4828762900674789253, guid: ab731f0130983304189f0d07ac1dc26c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4828762900674789253, guid: ab731f0130983304189f0d07ac1dc26c,
         type: 3}
@@ -33289,3 +33889,372 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab731f0130983304189f0d07ac1dc26c, type: 3}
+--- !u!1001 &4829327915737389599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1417893383584750352, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599639184832692982, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599639185794298616, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599639186188029686, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599639186281945897, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108436898666123334, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079434, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829327916781079435, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: m_Name
+      value: CoinsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968391824470992261, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880143574542579, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880143599260429, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880144038987934, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880144072649187, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880144663686651, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880144825590074, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880144902165416, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 117
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880144964707017, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880145135277019, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880145213129547, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880145224313545, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330880145511910763, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772072972636, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772103050950, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772130330283, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772164398773, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772189832521, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772192413499, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 93
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772217526140, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772250642408, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772314655957, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772315692026, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772321178161, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772357139342, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772402639985, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772408441731, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772460372514, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772497235192, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772497287895, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772538865924, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772573112543, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772596453134, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639772711330603, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773050520906, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773101537733, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773106875148, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773159295623, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773217078407, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773328261492, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773459769679, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773574601086, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773592189176, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773593403536, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773752067390, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773816479824, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773875710459, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773915555629, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773932774328, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639773991946461, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639774088192114, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388639774147738776, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724990955810887672, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926571261908147865, guid: cc6522ae37240574b803ae280902a6e8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 97
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc6522ae37240574b803ae280902a6e8, type: 3}
