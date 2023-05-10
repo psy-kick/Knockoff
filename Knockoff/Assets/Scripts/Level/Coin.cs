@@ -22,7 +22,7 @@ namespace KnockOff.Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other != null && other.tag == "Player")
+            if (other != null && other.tag == "Player" && gameObject != null)
             {
                 coinAudioSource.Play();
                 other.transform.parent.GetComponent<PlayerManager>().totalCoins += coinValue;
