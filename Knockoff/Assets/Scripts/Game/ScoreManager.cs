@@ -20,7 +20,6 @@ namespace KnockOff.Game
             if (instance == null)
             {
                 instance = this;
-                //DontDestroyOnLoad(gameObject);
             }
 
             InGameUIHandler = FindObjectOfType<InGameUIHandler>();
@@ -59,6 +58,16 @@ namespace KnockOff.Game
 
             //call ui
             InGameUIHandler.UpdateScoresUI();
+        }
+
+        public int ReturnTeamWinner()
+        {
+            if (team1Score > team2Score)
+                return 1;
+            else if (team2Score > team1Score)
+                return 2;
+            else
+                return 0;
         }
 
 
