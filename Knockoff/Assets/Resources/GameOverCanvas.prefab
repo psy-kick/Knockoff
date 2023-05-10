@@ -192,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1104045876937114041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1770,7 +1770,7 @@ MonoBehaviour:
   teamCrowns:
   - {fileID: 6251897431749828563}
   - {fileID: 4881117056660203946}
-  matchDrawTxt: {fileID: 0}
+  matchDrawTxt: {fileID: 2018916088289369876}
 --- !u!1 &7871395199323655175
 GameObject:
   m_ObjectHideFlags: 0
