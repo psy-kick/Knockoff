@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using KnockOff.Player;
 
 namespace KnockOff.Game
 {
     public class Coin : MonoBehaviourPunCallbacks
     {
         [SerializeField] private int coinType;
-        [SerializeField] private float coinValue;
+        [SerializeField] private int coinValue;
 
         private AudioSource coinAudioSource;
+
+        private InGameUIHandler InGameUIHandler;
 
         private void Start()
         {
@@ -22,6 +25,9 @@ namespace KnockOff.Game
             if (other != null && other.tag == "Player")
             {
                 coinAudioSource.Play();
+                other.transform.parent.GetComponent<PlayerManager>().totalCoins += coinValue;
+                InGameUIHandler = FindObjectOfType<InGameUIHandler>();
+                InGameUIHandler.UpdateCoinsUI();
                 photonView.RPC("RespawnCoin", RpcTarget.All, coinType, transform.parent.position);
                 Invoke("WaitForDestroy", 0.2f);
             }

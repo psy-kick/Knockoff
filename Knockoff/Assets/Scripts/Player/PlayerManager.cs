@@ -15,6 +15,8 @@ namespace KnockOff.Player
 
         #region Public Fields
         public PlayerManager localPlayer { get; private set; }
+
+        public int totalCoins { get; set; }
         public PhotonTeam playerTeam { get; private set; }
         public string playerUsername { get; private set; }
 
