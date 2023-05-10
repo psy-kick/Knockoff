@@ -24,12 +24,6 @@ public class PlayfabManager : MonoBehaviour
     public GameObject LoginPanel;
     public GameObject ResetPanel;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
     public void SwitchTORegisterPage()
     {
         LoginPanel.SetActive(false);
@@ -82,12 +76,12 @@ public class PlayfabManager : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult result)
     {
-        Messagetext.text = "LoggedIn!";
+        Messagetext.text = "Logged In!";
         StartCoroutine(SceneLoader());
     }
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
-        MessagetextRegister.text = "Registered and LoggedIn";
+        MessagetextRegister.text = "Registered and Logged In";
         StartCoroutine(SceneLoader());
     }
     private void OnError(PlayFabError error)

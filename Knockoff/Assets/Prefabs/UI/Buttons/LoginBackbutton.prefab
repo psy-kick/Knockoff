@@ -176,7 +176,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 32.008392, y: -32.608093}
-  m_SizeDelta: {x: 64.0168, y: 65.2162}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1845424853494289386
 CanvasRenderer:
@@ -307,9 +307,10 @@ AudioSource:
   m_GameObject: {fileID: 1845424853494289398}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7948317390654014984, guid: fec6b7de81e7c6d46973ffb82d733afa,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9a5a6f4240d52d3448f32ff661d24f3b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
