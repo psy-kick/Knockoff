@@ -33201,17 +33201,17 @@ PrefabInstance:
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.26879114
+      value: 0.26879117
       objectReference: {fileID: 0}
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06783343
+      value: 0.06783342
       objectReference: {fileID: 0}
     - target: {fileID: 3795822680897111531, guid: 4b7389bd4c76cf540bdd82dc5981e42c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23510279
+      value: -0.23510277
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7389bd4c76cf540bdd82dc5981e42c, type: 3}
@@ -33286,11 +33286,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828762900674789255, guid: ab731f0130983304189f0d07ac1dc26c,
-        type: 3}
-      propertyPath: timerDuration
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab731f0130983304189f0d07ac1dc26c, type: 3}
