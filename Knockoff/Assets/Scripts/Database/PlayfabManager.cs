@@ -24,6 +24,44 @@ public class PlayfabManager : MonoBehaviour
     public GameObject LoginPanel;
     public GameObject ResetPanel;
 
+    public void SendScoreSystemTeam1(int score1)
+    {
+        var request = new UpdatePlayerStatisticsRequest
+        {
+            Statistics = new List<StatisticUpdate>
+            {
+                new StatisticUpdate
+                {
+                    StatisticName = "Kills",
+                    Value = score1,
+                    
+                }
+            }
+        };
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnScoreBoardUpdate, OnError);
+    }
+    public void SendScoreSystemTeam2(int score2)
+    {
+        var request = new UpdatePlayerStatisticsRequest
+        {
+            Statistics = new List<StatisticUpdate>
+            {
+                new StatisticUpdate
+                {
+                    StatisticName = "Team2Kills",
+                    Value = score2,
+
+                }
+            }
+        };
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnScoreBoardUpdate, OnError);
+    }
+
+    private void OnScoreBoardUpdate(UpdatePlayerStatisticsResult result)
+    {
+        Debug.Log("Scoreboard sent");
+    }
+
     public void SwitchTORegisterPage()
     {
         LoginPanel.SetActive(false);
