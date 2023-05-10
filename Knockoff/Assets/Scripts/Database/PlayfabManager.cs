@@ -23,6 +23,10 @@ public class PlayfabManager : MonoBehaviour
     public GameObject RegisterPanel;
     public GameObject LoginPanel;
     public GameObject ResetPanel;
+    public GameObject Row1Prefab;
+    public GameObject Row2Prefab;
+    public Transform Row1Parent;
+    public Transform Row2Parent;
 
     public void SendScoreSystemTeam1(int score1)
     {
@@ -55,6 +59,58 @@ public class PlayfabManager : MonoBehaviour
             }
         };
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnScoreBoardUpdate, OnError);
+    }
+    public void GetStatButton()
+    {
+        GetLeaderBoardTeam1();
+        GetLeaderBoardTeam2();
+    }
+    public void GetLeaderBoardTeam1()
+    {
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "Kills",
+            StartPosition = 0,
+            MaxResultsCount = 10
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet1, OnError);
+    }
+    public void GetLeaderBoardTeam2()
+    {
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "Team2Kills",
+            StartPosition = 0,
+            MaxResultsCount = 10
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet2, OnError);
+    }
+
+    private void OnLeaderboardGet1(GetLeaderboardResult result)
+    {
+        foreach(Transform item in Row1Parent)
+        {
+            Destroy(item.gameObject);
+        }
+        foreach(var item in result.Leaderboard)
+        {
+            GameObject newGO = Instantiate(Row1Prefab, Row1Parent);
+            TMP_Text[] texts =newGO.GetComponentsInChildren<TMP_Text>();
+            texts[0].text = item.StatValue.ToString();
+        }
+    }
+    private void OnLeaderboardGet2(GetLeaderboardResult result)
+    {
+        foreach (Transform item in Row2Parent)
+        {
+            Destroy(item.gameObject);
+        }
+        foreach (var item in result.Leaderboard)
+        {
+            GameObject newGO = Instantiate(Row2Prefab, Row2Parent);
+            TMP_Text[] texts = newGO.GetComponentsInChildren<TMP_Text>();
+            texts[0].text = item.StatValue.ToString();
+        }
     }
 
     private void OnScoreBoardUpdate(UpdatePlayerStatisticsResult result)

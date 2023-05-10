@@ -47,7 +47,12 @@ public class MainMenuHandler : MonoBehaviour
         sceneName = "Credits";
         Invoke("WaitForLoadScene", 0.5f);
     }
-
+    public void GoToScoreboard()
+    {
+        m_AudioSource.Play();
+        sceneName = "ScoreBoard";
+        Invoke("WaitForLoadScene", 0.5f);
+    }
     public void Exit()
     {
         Application.Quit();

@@ -12,6 +12,8 @@ public class RocketLauncherProjectile : Gun
     [SerializeField] Transform HitVfx;
     [SerializeField] Transform HitSound;
 
+    private float NextShoot;
+
     [SerializeField] float projectileSpeed = 10f;
 
     [Header("Player")]
@@ -31,11 +33,15 @@ public class RocketLauncherProjectile : Gun
         {
             mouseWorldPos = hitInfo.point;
             Vector3 aimDir = (mouseWorldPos - SpawnPoint.position).normalized;
-            GameObject _projectile = PhotonNetwork.Instantiate(projectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir,Vector3.up));
-            _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
-            _projectile.GetComponent<Projectile>().playerOwner = playerOwner.Owner;
+            if(Time.time>NextShoot)
+            {
+                NextShoot = Time.time + itemInfo.FireRate;
+                GameObject _projectile = PhotonNetwork.Instantiate(projectilePrefab.name, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                _projectile.GetComponent<Rigidbody>().velocity = _projectile.transform.forward * projectileSpeed;
+                _projectile.GetComponent<Projectile>().playerOwner = playerOwner.Owner;
 
-            StartCoroutine(WaitForBullet(_projectile));
+                StartCoroutine(WaitForBullet(_projectile));
+            }
         }
     }
 
