@@ -49,14 +49,11 @@ public class WaterProjectile : MonoBehaviourPunCallbacks
 
     private bool IsFriendlyFire(int targetPlayerID)
     {
-        return false;       //decided to give score to opposing team even if friendly fire
-
-        /*
         PhotonView pv = PhotonView.Find(targetPlayerID);
 
         if (photonView.Owner.GetPhotonTeam() == pv.Owner.GetPhotonTeam())
             return true;
 
-        return false;*/
+        return false;
     }
 }

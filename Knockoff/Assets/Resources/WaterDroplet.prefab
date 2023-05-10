@@ -187,6 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6691830845f83248a7146760ea7b8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expForce: 600
+  expForce: 500
   HitAudio: {fileID: 1725876188417502251, guid: e9b1e983adf8a274daa923b917ef0549,
     type: 3}
