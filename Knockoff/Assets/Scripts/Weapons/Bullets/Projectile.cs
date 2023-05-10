@@ -21,13 +21,10 @@ public class Projectile : MonoBehaviourPunCallbacks
         else if (collision.transform.tag == "Player")
         {
             int targetPlayerID = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
-            if (!IsFriendlyFire(targetPlayerID))
-            {
-                Vector3 contactPoint = collision.contacts[0].point;
-                Instantiate(HitAudio, transform.position, Quaternion.identity);
-                Destroy(HitAudio.gameObject, 1f);
-                photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, contactPoint);
-            }
+            Vector3 contactPoint = collision.contacts[0].point;
+            Instantiate(HitAudio, transform.position, Quaternion.identity);
+            Destroy(HitAudio.gameObject, 1f);
+            photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, contactPoint);
         }
     }
 
