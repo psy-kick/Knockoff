@@ -18,6 +18,6 @@ public class PressAnyKeyToPlay : MonoBehaviour
 
     private void LoadScene()
     {
-        SceneManager.LoadScene("LoginSystem");
+        SceneManager.LoadScene("MainMenu");
     }
 }
