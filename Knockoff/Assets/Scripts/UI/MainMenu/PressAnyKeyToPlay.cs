@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PressAnyKeyToPlay : MonoBehaviour
 {
@@ -16,8 +15,8 @@ public class PressAnyKeyToPlay : MonoBehaviour
         }
     }
 
-    private void LoadScene()
+    public void LoadScene()
     {
-        SceneManager.LoadScene("LoginSystem");
+        SceneLoader.LoadNextScene();
     }
 }

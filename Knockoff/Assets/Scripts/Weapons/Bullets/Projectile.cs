@@ -7,8 +7,8 @@ using Photon.Pun.UtilityScripts;
 
 public class Projectile : MonoBehaviourPunCallbacks
 {
-    [SerializeField] float expForce = 500f;
-    [SerializeField] Transform HitAudio;
+    [SerializeField] private float expForce = 500f;
+    [SerializeField] private AudioSource _audioSource;
     public Photon.Realtime.Player playerOwner { get; set; }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,8 +22,6 @@ public class Projectile : MonoBehaviourPunCallbacks
         {
             int targetPlayerID = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
             Vector3 contactPoint = collision.contacts[0].point;
-            Instantiate(HitAudio, transform.position, Quaternion.identity);
-            Destroy(HitAudio.gameObject, 1f);
             photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, contactPoint);
         }
     }
@@ -32,6 +30,8 @@ public class Projectile : MonoBehaviourPunCallbacks
     private void KnockBackPlayer(int targetPlayerID, Photon.Realtime.Player attackingPlayer , float expForce, Vector3 contactPoint)
     {
         PhotonView pv = PhotonView.Find(targetPlayerID);
+        Debug.LogError("RPC CALL");
+        Debug.LogError(photonView.Owner == attackingPlayer && attackingPlayer != null);
 
         if (photonView.Owner == attackingPlayer && attackingPlayer != null)
         {
@@ -40,6 +40,7 @@ public class Projectile : MonoBehaviourPunCallbacks
             pv.GetComponent<PlayerMovement>().anim.SetTrigger("GotHit");
             Vector3 knockbackDir = (contactPoint - transform.position).normalized;
             exPlode.AddForce(knockbackDir * expForce, ForceMode.Impulse);
+            Debug.Log("KNOCK BACK");
         }
     }
 

@@ -1,14 +1,12 @@
 using KnockOff.Player;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterProjectile : MonoBehaviourPunCallbacks
 {
     [SerializeField] float expForce = 100f;
-    [SerializeField] Transform HitAudio;
+    [SerializeField] private AudioSource _audioSource;
 
     public Photon.Realtime.Player playerOwner { get; set; }
 
@@ -23,8 +21,6 @@ public class WaterProjectile : MonoBehaviourPunCallbacks
         {
             int targetPlayerID = collision.gameObject.GetComponentInParent<PhotonView>().ViewID;
             Vector3 contactPoint = collision.contacts[0].point;
-            Instantiate(HitAudio, transform.position, Quaternion.identity);
-            Destroy(HitAudio.gameObject, 1f);
             photonView.RPC("KnockBackPlayer", RpcTarget.Others, targetPlayerID, playerOwner, expForce, contactPoint);
         }
     }
@@ -41,6 +37,7 @@ public class WaterProjectile : MonoBehaviourPunCallbacks
             pv.GetComponent<PlayerMovement>().anim.SetTrigger("GotHit");
             Vector3 knockbackDir = (contactPoint - transform.position).normalized;
             exPlode.AddForce(knockbackDir * expForce, ForceMode.Impulse);
+            Debug.Log("KNOCK BACK");
         }
     }
 

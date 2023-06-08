@@ -2,14 +2,14 @@ using KnockOff.Player;
 using KnockOff.Game;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviourPunCallbacks
 {
     private PlayerManager playerManager;
     public Photon.Realtime.Player Opponent { get; set; }
+
+    private PhotonTeam opposingTeam;
 
     private void Start()
     {
@@ -27,6 +27,15 @@ public class PlayerRespawn : MonoBehaviourPunCallbacks
             return;
 
         SpawnManager.respawnPlayer?.Invoke(transform, playerManager.playerTeam);
+
+        foreach (PhotonTeam team in PhotonTeamsManager.Instance.GetAvailableTeams())
+            if (!playerManager.playerTeam.Equals(team))
+                opposingTeam = team;
+
+        Debug.LogError(PhotonTeamsManager.Instance.GetAvailableTeams());
+        Debug.LogError(opposingTeam.Name);
+        //update scoring system (give point to opposing team)
+        //ScoreManager.instance.UpdateTeamScore(opposingTeam.Code, 1);
 
         if (Opponent != null)
         {

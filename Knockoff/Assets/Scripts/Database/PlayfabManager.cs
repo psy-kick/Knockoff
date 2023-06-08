@@ -171,22 +171,22 @@ public class PlayfabManager : MonoBehaviour
     private void OnLoginSuccess(LoginResult result)
     {
         Messagetext.text = "Logged In!";
-        StartCoroutine(SceneLoader());
+        StartCoroutine(LoadScene());
     }
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
         MessagetextRegister.text = "Registered and Logged In";
-        StartCoroutine(SceneLoader());
+        StartCoroutine(LoadScene());
     }
     private void OnError(PlayFabError error)
     {
         Messagetext.text = error.ErrorMessage;
         Debug.Log(error.GenerateErrorReport());
     }
-    IEnumerator SceneLoader()
+    IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("MainMenu");
+        SceneLoader.LoadNextScene();
     }
     IEnumerator PanelShifter()
     {
@@ -207,4 +207,5 @@ public class PlayfabManager : MonoBehaviour
     {
         Debug.Log("Success");
     }
+
 }
