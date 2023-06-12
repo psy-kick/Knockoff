@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RL
   m_EditorClassIdentifier: 
   ItemName: Rocket Launcher
-  FireRate: 0.5
+  FireRate: 1.5
