@@ -22,23 +22,27 @@ namespace KnockOff.Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other != null && other.tag == "Player" && gameObject != null)
+            if (other != null && other.tag == "Player" && gameObject != null && transform.parent != null)
             {
                 coinAudioSource.Play();
                 other.transform.parent.GetComponent<PlayerManager>().totalCoins += coinValue;
                 InGameUIHandler = FindObjectOfType<InGameUIHandler>();
                 InGameUIHandler.UpdateCoinsUI();
-                photonView.RPC("RespawnCoin", RpcTarget.All, coinType, transform.parent.position);
+                //photonView.RPC("RespawnCoin", RpcTarget.MasterClient, coinType, transform.parent.position);
+                RespawnCoin(coinType, transform.parent.position);
                 Invoke("WaitForDestroy", 0.2f);
             }
+
+            if (transform.parent == null)
+                PhotonNetwork.Destroy(gameObject);
         }
 
         private void WaitForDestroy()
         {
+            transform.SetParent(null);
             PhotonNetwork.Destroy(gameObject);
         }
 
-        [PunRPC]
         public void RespawnCoin(int _coinType, Vector3 _loc)
         {
             CoinsManager.instance.RespawnCoin(_coinType, _loc);

@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6691830845f83248a7146760ea7b8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expForce: 500
+  expForce: 200
   _audioSource: {fileID: 687534567665030705}
 --- !u!82 &687534567665030705
 AudioSource:
